@@ -96,7 +96,7 @@ export default {
 
 .footer {
   // background-color: #333333;
-background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
+  background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
 
 
   // padding-top: 30px;
@@ -118,7 +118,7 @@ background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
   }
   &-group {
     margin-top: 60px;
-    width: 50%;
+    width: 40%;
     @media (min-width:768px) {
       width:20%;
     }

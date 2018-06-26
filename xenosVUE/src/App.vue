@@ -51,6 +51,7 @@ export default {
 }
 
 body {
+  height: 100vh;
   overflow-x: hidden;
   background-color: var(--main-dark-color);
   --header-color:var(--main-dark-color);

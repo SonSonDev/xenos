@@ -15,18 +15,28 @@
   <div class="explore_main">
 
     <div class="explore_main_header">
-      <h4 class="explore_main_header_title">Step1</h4>
-      <h6 class="explore_main_header_subtitle gradientText">01. Select the planet you want to explore</h6>
-      <p class="explore_main_header_text gradientText">
-        Select the planet you want to explore
-        Select the planet you want to explore
+      <h6 class="explore_main_header_subtitle">Discover</h6>
+      <h4 class="explore_main_header_title">Other worlds</h4>
+      <p class="explore_main_header_text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, itaque! Possimus itaque non, repellat sed, aliquid praesentium animi.
       </p>
+      <h6 class="explore_main_header_headline gradientText">01. Select the planet you want to explore</h6>
+      <p class="explore_main_header_instruction">Select the planet you want to explore Select the planet you want to explore</p>
+      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
+      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
+      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
     </div>
 
     <div class="explore_main_content">
       <h4 class="explore_main_content_title">Mars</h4>
       <div class="explore_main_content_next">
         <p class="explore_main_content_next_text">Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary ...</p>
+        <div class="explore_main_content_next_video">
+          <iframe class="explore_main_content_next_video_iframe" src="https://www.youtube.com/embed/GF60Iuh643I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
         <button class="explore_main_content_next_button">Next</button>
       </div>
     </div>
@@ -72,11 +82,7 @@ export default {
 </script>
 
 
-<style lang="scss">
-body {
-  height: 100vh;
-  overflow-y: hidden;
-}
+<style lang="scss" scoped>
 .explore {
   height: 100%;
   width: 100%;
@@ -84,7 +90,6 @@ body {
 
   &_main {
     height: 100%;
-
     color: var(--main-dark-white);
     display: flex;
     flex-direction: column;
@@ -93,6 +98,8 @@ body {
     position: relative;
     @media(min-width:768px){
       flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
   &_select {
     height: calc(28vh * 1.86);
@@ -102,6 +109,7 @@ body {
     @media(min-width:768px){
       transform: rotate(-90deg);
       right: -22vh;
+      top: 12vh;
     }
     &_arrows {
       display: flex;
@@ -111,7 +119,7 @@ body {
       top: 14vh;
       &_left {
         margin-left: auto;
-        margin-right: 34vh;
+        margin-right: 40vh;
       }
       &_right {
         margin-right: auto;
@@ -134,7 +142,7 @@ body {
         background-color: #fff;
         border: 10px solid var(--main-dark-color);
         &.active {
-          transform: scale(1);
+          transform: scale(1.2);
           border: none;
         }
         &:nth-child(1) {
@@ -178,17 +186,23 @@ body {
     }
   }
   &_content {
-    height: 60vh;
+    height: 66vh;
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
-    @media(min-width:768px){
-      margin-right: 30vh;
+    @media (min-width: 768px) {
+      // width: 100%;
+      max-width: 345px;
+      margin-right: 56vh;
+      height: auto;
     }
     &_title {
-      
       text-align: center;
-      // margin-bottom: 20px;
+      @media (min-width: 768px) {
+        margin-top: 120px;
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
     }
     &_next {
       margin-top: auto;
@@ -200,29 +214,85 @@ body {
       padding: 0 64px;
       text-align: center;
       max-width: 240px;
+      @media (min-width: 768px) {
+        padding: 0;
+        justify-content: flex-start;
+        max-width: none;
+        text-align: left;
+      }
       &_text {
 
       }
       &_button {
         margin-top: 20px;
       }
+      &_video {
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+          width: 100%;
+          margin-top: 24px;
+          &_iframe {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
     }
   }
-
-
-
   &_header {
     display: flex;
     flex-direction: column;
     padding: 26px 64px;
-    &_title {
-      align-self: center;
+    @media (min-width: 768px) {
+      width: 24vw;
+      margin-top: 80px;
+      padding: 0 64px;
     }
     &_subtitle {
-      margin-top: 16px;
+      margin-bottom: 2px;
+      color: var(--main-grey-color);
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+    &_title {
+      // align-self: center;
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
     }
     &_text {
+      display: block;
+      margin: 20px 0;
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+    &_headline {
+      margin-top: 16px;
+      &.grey {
+        display: none;
+      }
+      @media (min-width: 768px) {
+        margin-top: 0;
+        display: block;
+        color: var(--secondary-dark-color);
+      }
+    }
+    &_instruction {
       margin-top: 6px;
+      margin-bottom: 20px;
+      &.grey {
+        display: none;
+        @media (min-width: 768px) {
+          display: block;
+          color: var(--secondary-dark-color);
+        }
+      }
     }
   }
 

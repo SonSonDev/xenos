@@ -5,23 +5,23 @@
         <img src="../../assets/img/full-color-white.png" alt="">
       </div>
       
-      <h2 class="home_hero-title">The universe is a pretty big place to explore...</h2>
-      <p class="home_hero-sub">But you can help us discover uncharted territories</p>
+      <h1 class="home_hero-title">The universe is a pretty big place to explore...</h1>
+      <h5 class="home_hero-sub">But you can help us discover uncharted territories</h5>
       <a class="buttonContainer" href="">
         <button class="button home_hero-explorerButton">Become an explorer</button>
       </a>
     </div>
-  <HomeWave color="white"></HomeWave>
+  <Wave color="white"></Wave>
   </section>
 </template>
 
 <script>
-import HomeWave from '@/components/Home/HomeWave.vue';
+import Wave from '@/components/Wave.vue';
 
 export default {
   name: 'HomeHero',
   components: {
-    HomeWave
+    Wave
   }
 }
 
@@ -41,8 +41,6 @@ export default {
   padding-top: 40px;
   // padding-bottom:20%;
   @media(min-width:768px){
-    // clip-path: ellipse(100% 90% at 50% 0%);
-
     padding-top:324px;
   }
   
@@ -61,8 +59,6 @@ export default {
 
 
   &-title {
-    font-family: "Barlow-Bold";
-    font-size: 36px;
     line-height: 43px;
     margin-bottom: 10px;
     @media(min-width:768px){
@@ -70,8 +66,6 @@ export default {
     }
   }
   &-sub {
-    font-family: "Barlow-Regular";
-    font-size: 18px;
     line-height: 22px;
     width: 160px;
     margin-bottom: 20px;

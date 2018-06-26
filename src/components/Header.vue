@@ -9,31 +9,31 @@
         <li class="nav-list-item">
           <router-link to="/">
             <span class="jam jam-home nav-list-icon"></span>
-            <span>Home</span>
+            <span class="nav-list-itemLabel">Home</span>
           </router-link>
         </li>
         <li class="nav-list-item">
           <router-link to="/mission">
             <span class="jam jam-lightbulb nav-list-icon"></span>
-            <span>Mission</span>
+            <span class="nav-list-itemLabel">Our mission</span>
           </router-link>
         </li>
         <li class="nav-list-item">
-          <router-link to="/travel">
+          <router-link to="/rover">
             <span class="jam jam-rocket nav-list-icon"></span>
-            <span>Travel</span>
+            <span class="nav-list-itemLabel">The rover</span>
           </router-link>
         </li>
         <li class="nav-list-item">
-          <router-link to="/product">
-            <span class="jam jam-aperture nav-list-icon"></span>
-            <span>Product?</span>
+          <router-link to="/explore">
+            <span class="jam jam-universe nav-list-icon"></span>
+            <span class="nav-list-itemLabel">Explore</span>
           </router-link>
         </li>
         <li class="nav-list-item">
           <router-link to="/account">
-            <span class="jam jam-odnoklassniki nav-list-icon nav-list-icon--still"></span>
-            <span>Account</span>
+            <span class="jam jam-user nav-list-icon nav-list-icon--still"></span>
+            <span class="nav-list-itemLabel">Account</span>
           </router-link>
         </li>
       </ul>
@@ -61,7 +61,7 @@ export default {
   bottom:0;
   left:0;
   right:0;
-  background-color: #303030;
+  background-color: var(--header-color);
   z-index:10;
   @media(min-width:768px){
     background-color:unset;
@@ -72,8 +72,7 @@ export default {
     justify-content: space-between;
     position: inherit;
     bottom: inherit;
-    left:inherit;
-    right:inherit;
+    
   }
   @media(min-width:1440px){
     padding:40px 122px 0;
@@ -110,28 +109,31 @@ export default {
     &-item {
       width: 20%;
       @media(min-width:768px){
-        width: 8.5vw;
+        width: 10vw;
         max-width: 110px;
       }
 
       & a {
-        font-family: "Barlow-Medium";
-        color: #fff;
+        font-family: var(--font-regular);
+        color: var(--header-item-color);
         text-decoration: none;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: 10px;
         &.router-link-exact-active {
-          color:orange;
+          color:var(--main-orange);
         }
         @media(min-width:768px){
-          font-family: "Barlow-Bold";
+          font-family: var(--font-bold);
           width: min-content;
           font-size: 14px;
           flex-direction: row;
           align-items: center;
         }
+      }
+      &Label {
+        white-space:nowrap;
       }
     }
 

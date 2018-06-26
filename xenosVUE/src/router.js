@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Mission from './views/Mission.vue'
 import Rover from './views/Rover.vue'
 import Explore from './views/Explore.vue'
+import ExplorePlanet from './views/ExplorePlanet.vue'
 import Account from './views/Account.vue'
 
 Vue.use(Router)
@@ -29,6 +30,11 @@ export default new Router({
       path: '/explore',
       name: 'explore',
       component: Explore
+    },
+    {
+      path: '/explore/:planet',
+      name: 'explore',
+      component: ExplorePlanet
     },
     {
       path: '/account',

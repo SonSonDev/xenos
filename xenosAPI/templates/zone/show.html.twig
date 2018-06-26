@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zone{% endblock %}
+
+{% block body %}
+    <h1>Zone</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ zone.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ zone.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ zone.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ zone.price }}</td>
+            </tr>
+            <tr>
+                <th>Temperature</th>
+                <td>{{ zone.temperature }}</td>
+            </tr>
+            <tr>
+                <th>Gravity</th>
+                <td>{{ zone.gravity }}</td>
+            </tr>
+            <tr>
+                <th>Distance</th>
+                <td>{{ zone.distance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('zone_index') }}">back to list</a>
+
+    <a href="{{ path('zone_edit', {'id': zone.id}) }}">edit</a>
+
+    {{ include('zone/_delete_form.html.twig') }}
+{% endblock %}

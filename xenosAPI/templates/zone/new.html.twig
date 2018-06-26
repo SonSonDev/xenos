@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Zone{% endblock %}
+
+{% block body %}
+    <h1>Create new Zone</h1>
+
+    {{ include('zone/_form.html.twig') }}
+
+    <a href="{{ path('zone_index') }}">back to list</a>
+{% endblock %}

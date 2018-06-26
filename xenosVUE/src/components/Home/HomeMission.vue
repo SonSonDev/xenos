@@ -224,6 +224,7 @@ export default {
         &-date {
           font-family: var(--font-bold);
           font-size:40px;
+          line-height: 50px;
         }
         &-title {
           margin-bottom:20px;

@@ -30,7 +30,7 @@ export default {
     &-awesome{
         --header-color: var(--main-dark-color);
         width: 100%;
-        height: 400px;
+        height: 450px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -49,6 +49,9 @@ export default {
             text-align: center;
             margin: 17px auto 22px;
             line-height: 22px;
+            @media (min-width:768px) {
+                max-width: 466px;
+            }
         }
         &Author {
             color:var(--main-grey-color);

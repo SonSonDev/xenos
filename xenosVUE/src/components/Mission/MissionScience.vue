@@ -36,6 +36,14 @@ export default {
 <style lang="scss" scoped>
   .mission_science {
     margin-top: 40px;
+
+    @media (min-width:949px){
+      & .container {
+        padding:0;
+      }
+      max-width:949px;
+      margin: 40px auto 0;
+    }
     &-title {
       color:#ffffff;
       margin-bottom: 20px;
@@ -49,19 +57,28 @@ export default {
     &-numbers {
       color: #ffffff;
       background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
-      border-radius:25px;
+      border-radius:200px;
       padding:50px 0 78px;
+      @media(min-width: 768px){
+        padding-bottom: 145px;
+      }
       &-title {
         text-align: center;
         margin-bottom:4px;
       }
       &-subTitle{
         text-align: center;
-        margin-bottom: 40px
+        margin-bottom: 40px;
+      @media(min-width: 768px){
+        margin-bottom: 80px;
+      }
       }
       &-item {
         margin-bottom:20px;
-
+        @media(min-width: 768px){
+          // margin:0 42px;
+          width: 30%;
+        }
         &Number {
           text-align: center;
           margin-bottom:4px;
@@ -69,6 +86,12 @@ export default {
         }
         &Text {
           text-align: center;
+        }
+      }
+      &-container {
+        @media (min-width:768px){
+          display: flex;
+          justify-content: center;
         }
       }
     }

@@ -2,6 +2,7 @@
   <div id="app">
     <Header/>
     <router-view/>
+    
   </div>
 </template>
 
@@ -14,6 +15,7 @@ export default {
     Header
   }
 }
+
 </script>
 
 
@@ -34,6 +36,63 @@ export default {
   src: url("./assets/fonts/Barlow-Regular.ttf");
 }
 
+//VARIABLE
+$fontRegular: "Barlow-Regular";
+$fontMedium: "Barlow-Medium";
+$fontBold: "Barlow-Bold";
+$mainOrange:#FF966F;
+$mainDarkColor: #333333;
+$secondaryDarkColor: #4F4F4F;
+$mainGreyColor: #C8C8C8;
+$mainDarkWhite: #F8F8F8;
+
+:root {
+  --font-regular: "Barlow-Regular";
+  --font-medium: "Barlow-Medium";
+  --font-bold: "Barlow-Bold";
+  --gradient-from: #FF5F6D;
+  --gradient-to: #FFC371;
+  --main-orange:#FF966F;
+  --main-dark-color: #333333;
+  --secondary-dark-color: #4F4F4F;
+  --main-grey-color: #C8C8C8;
+  --main-dark-white: #F8F8F8;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $mainDarkColor;
+}
+
+h1 {
+  font-size:36px;
+  font-family: var(--font-bold);
+}
+h2 {
+  font-size:32px;
+  font-family: $fontBold;
+}
+h3 {
+  font-size:28px;
+  font-family: $fontBold;
+}
+h4 {
+  font-size:24px;
+  font-family: $fontBold;
+}
+h5 {
+  font-size:18px;
+  font-family: $fontRegular;
+}
+h6 {
+  font-size:12px;
+  font-family: $fontBold;
+}
+p {
+  font-size:14px;
+  font-family: $fontRegular;
+}
+
 .container {
   box-sizing: border-box;
   padding-left:43px;
@@ -51,12 +110,12 @@ export default {
 
 
 // Button////////////////////////////////
-  
+
 button {
-  font-family: "Barlow-Bold";
+  font-family: $fontBold;
   padding: 12px 32px;
   font-size: 14px;
-  color: #fff;
+  color: white;
   cursor: pointer;
   text-align:center;
   border: none;
@@ -68,7 +127,7 @@ button {
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  
+
   &:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;
@@ -79,10 +138,10 @@ button {
   &:focus {
     outline: none;
   }
-  
+
   &Container {
     width:inherit;
-    color: #fff;
+    color: white;
     text-decoration: none;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas"></canvas>
+  <canvas :class="{top:isTop}" ref="canvas"></canvas>
 </template>
 
 <script>
@@ -7,15 +7,15 @@
 import paper from 'paper'
 
 export default {
-  name: 'HomeWave',
-  props: ["color"],
+  name: 'Wave',
+  props: ["color", "isTop"],
   mounted: function() {
     
     this.paper = paper.setup(this.$refs.canvas);
 
     const vw = this.paper.view.size.width
     const vh = this.paper.view.size.height
-
+    
     // The amount of segment points we want to create:
     var amount = Math.floor(vw / 80);
 
@@ -36,7 +36,7 @@ export default {
     path.add(new paper.Point(0, vh))
 
     // Select the path, so we can see how it is constructed:
-    path.selected = true;
+    // path.selected = true;
 
     this.paper.view.onFrame = function(event) {
       
@@ -63,11 +63,16 @@ export default {
 <style scoped lang="scss">
 
 canvas {
-position: relative;
-bottom:-10px;
+  position: relative;
+  bottom:-10px;
   // background-color: red;
   width:100%;
   height: 100px;
+  &.top {
+    transform: rotate(180deg);
+    bottom:40px;
+
+  }
 }
 
 </style>

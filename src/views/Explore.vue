@@ -1,13 +1,13 @@
 <template>
-  <div class="product">
-    <p>PPPPRODUCT</p>
+  <div class="explore">
+    <p>Exploreeeee</p>
   </div>
 </template>
 
 <script>
 
 export default {
-  name: 'product',
+  name: 'explore',
   components: {
   }
 }

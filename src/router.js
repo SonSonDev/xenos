@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Mission from './views/Mission.vue'
 import Travel from './views/Travel.vue'
-import Product from './views/Product.vue'
+import Explore from './views/Explore.vue'
 import Account from './views/Account.vue'
 
 Vue.use(Router)
@@ -26,9 +26,9 @@ export default new Router({
       component: Travel
     },
     {
-      path: '/product',
-      name: 'product',
-      component: Product
+      path: '/explore',
+      name: 'explore',
+      component: Explore
     },
     {
       path: '/account',

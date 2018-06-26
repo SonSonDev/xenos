@@ -4,33 +4,40 @@
     <HomeMission/>
     <HomeRover/>
     <HomeExplore/>
-    <HomeFooter/>
+    <HomeTwitch/>
+    <!-- <Wave color="#333333"></Wave> -->
+    <Footer page-background="white"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HomeHero from '../components/Home/HomeHero.vue'
-import HomeMission from '../components/Home/HomeMission.vue'
-import HomeRover from '../components/Home/HomeRover.vue'
-import HomeExplore from '../components/Home/HomeExplore.vue'
-import HomeFooter from '../components/Home/HomeFooter.vue'
+import HomeHero from '../components/Home/HomeHero.vue';
+import HomeMission from '../components/Home/HomeMission.vue';
+import HomeRover from '../components/Home/HomeRover.vue';
+import HomeExplore from '../components/Home/HomeExplore.vue';
+import HomeTwitch from '../components/Home/HomeTwitch.vue';
+import Wave from '../components/Wave.vue';
+import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Home',
   components: {
-    HomeHero,HomeMission,HomeRover,HomeExplore, HomeFooter
+    HomeHero,HomeMission,HomeRover,HomeExplore,HomeTwitch,Footer,Wave
   }
 }
 
 </script>
 
 <style lang="scss" scoped>
+  body {
+
+  }
   .home {
+    background-color: white;
     position: absolute;
     top:0;
     width: 100%;
-    height:300vh;
   }
 
 </style>

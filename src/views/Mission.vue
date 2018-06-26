@@ -1,14 +1,33 @@
 <template>
-  <div class="Mission">
-    <h1>This is THE mission page</h1>
+  <div class="mission">
+    <MissionTop/>
+    <MissionTimeline/>
+    <!-- <Wave color="#333333"></Wave> -->
+    <Footer page-background="#333333"/>
   </div>
 </template>
 
 <script>
+import MissionTop from "../components/Mission/MissionTop.vue"
+import MissionTimeline from "../components/Mission/MissionTimeline.vue"
+import Footer from "../components/Footer.vue"
+import Wave from "../components/Wave.vue"
 
 export default {
-  name: 'mission',
+  name: 'Mission',
   components: {
+    MissionTop,MissionTimeline,Footer,Wave
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .mission {
+    background-color: #333333;
+    min-height: 100vh;
+    position: absolute;
+    top:0;
+    width: 100%;
+  }
+  
+</style>

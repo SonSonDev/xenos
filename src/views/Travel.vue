@@ -1,6 +1,6 @@
 <template>
   <div class="travel">
-    <p>travelo</p>
+    <p>trap</p>
   </div>
 </template>
 

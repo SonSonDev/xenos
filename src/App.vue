@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <!-- <Header/> -->
     <router-view/>
     
   </div>
@@ -37,15 +37,6 @@ export default {
 }
 
 //VARIABLE
-$fontRegular: "Barlow-Regular";
-$fontMedium: "Barlow-Medium";
-$fontBold: "Barlow-Bold";
-$mainOrange:#FF966F;
-$mainDarkColor: #333333;
-$secondaryDarkColor: #4F4F4F;
-$mainGreyColor: #C8C8C8;
-$mainDarkWhite: #F8F8F8;
-
 :root {
   --font-regular: "Barlow-Regular";
   --font-medium: "Barlow-Medium";
@@ -61,7 +52,9 @@ $mainDarkWhite: #F8F8F8;
 
 body {
   overflow-x: hidden;
-  background-color: $mainDarkColor;
+  background-color: var(--main-dark-color);
+  --header-color:var(--main-dark-color);
+  --header-item-color: #ffffff;
 }
 
 h1 {
@@ -70,27 +63,27 @@ h1 {
 }
 h2 {
   font-size:32px;
-  font-family: $fontBold;
+  font-family: var(--font-bold);
 }
 h3 {
   font-size:28px;
-  font-family: $fontBold;
+  font-family: var(--font-bold);
 }
 h4 {
   font-size:24px;
-  font-family: $fontBold;
+  font-family: var(--font-bold);
 }
 h5 {
   font-size:18px;
-  font-family: $fontRegular;
+  font-family: var(--font-regular);
 }
 h6 {
   font-size:12px;
-  font-family: $fontBold;
+  font-family: var(--font-bold);
 }
 p {
   font-size:14px;
-  font-family: $fontRegular;
+  font-family: var(--font-regular);
 }
 
 .container {
@@ -112,7 +105,7 @@ p {
 // Button////////////////////////////////
 
 button {
-  font-family: $fontBold;
+  font-family: var(--font-bold);
   padding: 12px 32px;
   font-size: 14px;
   color: white;

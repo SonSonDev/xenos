@@ -163,18 +163,18 @@ export default {
       }
       &-onTitle {
         text-transform : uppercase;
-        color:#C8C8C8;
+        color: var(--main-grey-color);
 
       }
       &-title {
         margin-bottom: 20px;
-        color: #333333;
+        color: var(--main-dark-color);
 
       }
       &-text {
         line-height: 22px;
         margin-bottom: 20px;
-        color: #333333;
+        color: var(--main-dark-color);
       }
     }
 
@@ -222,7 +222,7 @@ export default {
       
 
         &-date {
-          font-family:"Barlow-Bold";
+          font-family: var(--font-bold);
           font-size:40px;
         }
         &-title {

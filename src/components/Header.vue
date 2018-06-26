@@ -19,7 +19,7 @@
           </router-link>
         </li>
         <li class="nav-list-item">
-          <router-link to="/travel">
+          <router-link to="/rover">
             <span class="jam jam-rocket nav-list-icon"></span>
             <span class="nav-list-itemLabel">The rover</span>
           </router-link>
@@ -61,7 +61,7 @@ export default {
   bottom:0;
   left:0;
   right:0;
-  background-color: #303030;
+  background-color: var(--header-color);
   z-index:10;
   @media(min-width:768px){
     background-color:unset;
@@ -72,8 +72,7 @@ export default {
     justify-content: space-between;
     position: inherit;
     bottom: inherit;
-    left:inherit;
-    right:inherit;
+    
   }
   @media(min-width:1440px){
     padding:40px 122px 0;
@@ -110,23 +109,23 @@ export default {
     &-item {
       width: 20%;
       @media(min-width:768px){
-        width: 8.5vw;
+        width: 10vw;
         max-width: 110px;
       }
 
       & a {
-        font-family: "Barlow-Medium";
-        color: #fff;
+        font-family: var(--font-regular);
+        color: var(--header-item-color);
         text-decoration: none;
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: 10px;
         &.router-link-exact-active {
-          color:orange;
+          color:var(--main-orange);
         }
         @media(min-width:768px){
-          font-family: "Barlow-Bold";
+          font-family: var(--font-bold);
           width: min-content;
           font-size: 14px;
           flex-direction: row;

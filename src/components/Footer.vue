@@ -99,7 +99,7 @@ export default {
 background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
 
 
-  padding-top: 30px;
+  // padding-top: 30px;
   padding-bottom: 100px;
   &-social {
 

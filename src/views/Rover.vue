@@ -1,16 +1,14 @@
 <template>
-  <div class="explore">
+  <div class="rover">
     <Header/>
-    <p>Exploreeeee</p>
+    <p>trap</p>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue"
-
-
 export default {
-  name: 'explore',
+  name: 'rover',
   components: {
     Header
   }

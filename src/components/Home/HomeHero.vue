@@ -41,8 +41,6 @@ export default {
   padding-top: 40px;
   // padding-bottom:20%;
   @media(min-width:768px){
-    // clip-path: ellipse(100% 90% at 50% 0%);
-
     padding-top:324px;
   }
   

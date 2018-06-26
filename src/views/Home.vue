@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <Header/>
     <HomeHero/>
     <HomeMission/>
     <HomeRover/>
@@ -12,6 +13,7 @@
 
 <script>
 // @ is an alias to /src
+import Header from '../components/Header.vue';
 import HomeHero from '../components/Home/HomeHero.vue';
 import HomeMission from '../components/Home/HomeMission.vue';
 import HomeRover from '../components/Home/HomeRover.vue';
@@ -23,7 +25,7 @@ import Footer from '../components/Footer.vue';
 export default {
   name: 'Home',
   components: {
-    HomeHero,HomeMission,HomeRover,HomeExplore,HomeTwitch,Footer,Wave
+    Header,HomeHero,HomeMission,HomeRover,HomeExplore,HomeTwitch,Footer,Wave
   }
 }
 
@@ -38,6 +40,12 @@ export default {
     position: absolute;
     top:0;
     width: 100%;
+    --header-color: var(--main-dark-white);
+    --header-item-color:var(--main-dark-color);
+    @media(min-width:768px){
+      --header-item-color: #ffffff;
+
+    }
   }
 
 </style>

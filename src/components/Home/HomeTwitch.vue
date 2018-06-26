@@ -29,7 +29,7 @@ export default {
     &-title {
       color: #333333;
       font-size: 24px;
-      font-family: "Barlow-Bold";
+      font-family: var(--font-bold);
       margin-bottom: 30px;
 
     }

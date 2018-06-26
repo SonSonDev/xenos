@@ -70,7 +70,7 @@ canvas {
   height: 100px;
   &.top {
     transform: rotate(180deg);
-    bottom:40px;
+    bottom:20px;
 
   }
 }

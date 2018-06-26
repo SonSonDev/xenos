@@ -3,7 +3,7 @@
     <h4 class="mission_timeline-title">It started from an idea...</h4>
     <div class="container">
       <div v-for="(item, index) in timeline" :key="index" class="mission_timeline-item">
-        <div class="mission_timeline-item-line" :class="{first : isFirst(index)}">
+        <div class="mission_timeline-item-line" :class="{first : isFirst(index), last : isLast(index)}">
           <svg class="mission_timeline-item-circle" width="40" height="40" viewBox="0 0 40 40" fill="#333333" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="17.5" stroke="url(#paint0_linear)" stroke-width="5"/>
             <defs>
@@ -28,16 +28,17 @@
     </div>
     <div class="mission_timeline-end">
       <h4 class="mission_timeline-endText">And now it’s up to you to write history</h4>
-      <a class="buttonContainer" href="">
-        <button class="button mission_timeline-endButton">Start exploring</button>
-      </a>
+      <OrangeButton link="/explore">Start exploring</OrangeButton>
     </div>
   </section>
 </template>
 
 <script>
+import OrangeButton from "@/components/OrangeButton.vue";
+
 export default {
   name:"MissionTimeline",
+  components: {OrangeButton},
   data: function(){
     return {
       timeline: [
@@ -73,9 +74,10 @@ export default {
       return index%2===0;
     },
     isFirst: function(index){
-      
       return index===0;
-      
+    },
+    isLast: function(index){
+      return index===this.timeline.length-1;
     }
   }
 }
@@ -83,13 +85,22 @@ export default {
 
 <style lang="scss" scoped>
   .mission_timeline {
-    margin-top:20px;
+    margin-top:40px;
     margin-bottom: 160px;
+    
+    @media(min-width:768px){
+      margin-top:80px;
+      & .container {
+        margin-bottom: 180px;
+      }
+    }
     @media(min-width:1440px){
+
       & .container {
         padding:0;
         width:1200px;
-        margin:0 auto;
+        margin: 0 auto 180px;
+        
       }
     }
     &-title {
@@ -153,6 +164,9 @@ export default {
           &.first::after {
             height:50%;
             top:50%;
+          }
+          &.last::after {
+            height:140%;
           }
         }
 

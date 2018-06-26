@@ -1,15 +1,13 @@
 <template>
   <section class="home_hero">
-      <div class="container">
+    <div class="container">
       <div class="home_hero-logoContainer">
         <img src="../../assets/img/full-color-white.png" alt="">
       </div>
       
       <h1 class="home_hero-title">The universe is a pretty big place to explore...</h1>
       <h5 class="home_hero-sub">But you can help us discover uncharted territories</h5>
-      <a class="buttonContainer" href="">
-        <button class="button home_hero-explorerButton">Become an explorer</button>
-      </a>
+      <OrangeButton link="/explore">Become an explorer</OrangeButton>
     </div>
   <Wave color="white"></Wave>
   </section>
@@ -17,11 +15,12 @@
 
 <script>
 import Wave from '@/components/Wave.vue';
+import OrangeButton from '@/components/OrangeButton.vue';
 
 export default {
   name: 'HomeHero',
   components: {
-    Wave
+    Wave, OrangeButton
   }
 }
 
@@ -75,11 +74,8 @@ export default {
       
     }
   }
-
-  &-donateButton {
-    @media(min-width:768px){
-      display:none;
-    }
+  & .container {
+    margin-bottom:40px;
   }
 
 }

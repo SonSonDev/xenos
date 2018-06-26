@@ -6,9 +6,7 @@
         <h4 class="home_theRover-desc-title">Meet Christa !</h4>
         <p class="home_theRover-desc-text">Christa, named after Christa McAuliffe, the first civilian selected to go into space, is our revolutionary all terrain rover. Its unique spherical wheel design allows it to effortlessly roll on every surface, and is able to withstand extreme weather conditions.</p>
         <p class="home_theRover-desc-text">With its five 8K sensors, you’ll be able to experience a fully immersive 360° journey on the selected planets.</p>
-        <a class="home_theRover-button buttonContainer" href="">
-          <button class="button">Get to know it!</button>
-        </a>
+        <OrangeButton link="/rover">Get to know it!</OrangeButton>
       </div>
     </div>
     <div class="home_theRover-imgContainer">
@@ -20,9 +18,11 @@
 </template>
 
 <script>
+import OrangeButton from "@/components/OrangeButton.vue";
 export default {
   name:"HomeRover",
-  props:{}
+  props:{},
+  components: {OrangeButton}
 }
 </script>
 

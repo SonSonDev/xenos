@@ -6,9 +6,9 @@
         <h4 class="home_explore-desc-title">Discover the Solar System</h4>
         <p class="home_explore-desc-text">Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.</p>
         <p class="home_explore-desc-text">For the first time in history, everyone will be able to help them in this tremendous task.</p>
-        <a class="home_explore-button buttonContainer" href="">
-          <button class="button">Start exploring</button>
-        </a>
+
+        <OrangeButton link="/explore">Start exploring</OrangeButton>
+
       </div>
     </div>
     <div class="home_explore-imgContainer">
@@ -37,9 +37,10 @@
 </template>
 
 <script>
-
+import OrangeButton from "@/components/OrangeButton.vue"
 export default {
-  name: 'HomeExplore'
+  name: 'HomeExplore',
+  components: {OrangeButton}
 }
 </script>
 

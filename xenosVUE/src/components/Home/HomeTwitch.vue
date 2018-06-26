@@ -20,7 +20,7 @@ export default {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top:45px;
+    margin-top:80px;
     margin-bottom: 40px;
 
     @media (min-width: 768px) {

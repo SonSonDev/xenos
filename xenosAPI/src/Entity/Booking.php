@@ -40,6 +40,11 @@ class Booking
      */
     private $hour;
 
+    /**
+     * @ORM\Column(type="time")
+     */
+    private $endHour;
+
     public function getId()
     {
         return $this->id;
@@ -89,6 +94,18 @@ class Booking
     public function setHour(\DateTimeInterface $hour): self
     {
         $this->hour = $hour;
+
+        return $this;
+    }
+
+    public function getEndHour(): ?\DateTimeInterface
+    {
+        return $this->endHour;
+    }
+
+    public function setEndHour(\DateTimeInterface $endHour): self
+    {
+        $this->endHour = $endHour;
 
         return $this;
     }

@@ -3,6 +3,7 @@
     <Header/>
     <MissionTop/>
     <MissionBanner/>
+    <MissionScience/>
     <MissionTimeline/>
     <!-- <Wave color="#333333"></Wave> -->
     <Footer page-background="#333333"/>
@@ -13,6 +14,7 @@
 import Header from '../components/Header.vue';
 import MissionTop from "../components/Mission/MissionTop.vue"
 import MissionBanner from "../components/Mission/MissionBanner.vue"
+import MissionScience from "../components/Mission/MissionScience.vue"
 import MissionTimeline from "../components/Mission/MissionTimeline.vue"
 import Footer from "../components/Footer.vue"
 import Wave from "../components/Wave.vue"
@@ -20,7 +22,7 @@ import Wave from "../components/Wave.vue"
 export default {
   name: 'Mission',
   components: {
-    Header,MissionTop,MissionBanner,MissionTimeline,Footer,Wave
+    Header,MissionTop,MissionBanner,MissionScience,MissionTimeline,Footer,Wave
   }
 }
 </script>

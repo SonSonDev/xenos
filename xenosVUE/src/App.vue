@@ -83,7 +83,14 @@ h6 {
 }
 p {
   font-size:14px;
+  line-height: 22px;
   font-family: var(--font-regular);
+}
+
+.gradientText {
+  background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {

@@ -56,6 +56,9 @@ body {
   --header-color:var(--main-dark-color);
   --header-item-color: #ffffff;
 }
+#app {
+  height: 100%;
+}
 
 h1 {
   font-size:36px;
@@ -78,6 +81,7 @@ h5 {
   font-family: var(--font-regular);
 }
 h6 {
+  text-transform: uppercase;
   font-size:12px;
   font-family: var(--font-bold);
 }

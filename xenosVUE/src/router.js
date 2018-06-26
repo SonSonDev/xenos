@@ -33,7 +33,7 @@ export default new Router({
     },
     {
       path: '/explore/:planet',
-      name: 'explore',
+      name: 'explore-planet',
       component: ExplorePlanet
     },
     {

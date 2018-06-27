@@ -31,6 +31,10 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  @media(min-width: 768px){
+    margin-top: 101px; 
+
+  }
   &_main {
     height: 100%;
     display: flex;

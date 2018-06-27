@@ -133,7 +133,7 @@ label {
 
 // Button////////////////////////////////
 
-.button {
+button {
   font-family: var(--font-bold);
   padding: 12px 32px;
   font-size: 14px;

@@ -2,15 +2,16 @@
   <section class="account_signIn">
     
     <div class="container">
-      <form class="account_signIn-form">
+      <form class="account_signIn-form" v-on:submit.prevent="connection">
         <h4 class="account_signIn-title">Sign In</h4>
         <label class="account_signIn-label" for="">Email</label>
-        <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" type="text">
+        <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" type="text" v-model="form.email">
         <label class="account_signIn-label" for="">Password</label>
-        <input class="account_signIn-input" placeholder="6+ characters" type="text">
+        <input class="account_signIn-input" placeholder="6+ characters" type="text" v-model="form.password">
         <p class="account_signIn-forgot">Forgot your password</p>
-        <OrangeButton class="account_signIn-submitButton" link="/ezeaeaz">Sign In</OrangeButton>
-        
+        <div class="buttonContainer account_signIn-submitButton">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
         <router-link class="account_signIn-signInLink" to="account/signup">
           No account ? Create one.
         </router-link>
@@ -23,8 +24,32 @@
 import OrangeButton from "@/components/OrangeButton.vue";
 
 export default {
-name:"AccountSignIn",
-components:{OrangeButton}
+  name:"AccountSignIn",
+  components:{OrangeButton},
+  data: function(){
+    return {
+      form: {
+        email:"",
+        password:""
+      }
+    }
+  },
+  methods:{
+    connection() {
+      fetch('http://127.0.0.1:8000/api/users', {
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+        data['hydra:member'].forEach(element => {
+          if (true) {
+            console.log(this.form.email);
+            
+          }
+        });
+      })
+    }
+  }
 }
 </script>
 

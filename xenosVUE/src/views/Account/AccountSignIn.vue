@@ -41,28 +41,36 @@ export default {
     }
   },
   methods:{
-    connection() {
-      fetch('http://127.0.0.1:8000/api/users', {
+    getUserList() {
+      return fetch('http://127.0.0.1:8000/api/users', {
         method: 'GET'
       })
       .then(response => response.json())
       .then(data => {
-        var userlist = data['hydra:member']
-        
+        return data['hydra:member'];
+      })
+    },
+    connection(){
+      this.getUserList().then(data => {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].email===this.form.email && data[i].password===this.form.password) {
+            
+            localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
+            console.log(JSON.stringify(data[i]));
+            
+            location.href = '/account';
 
-        for (var i = 0; i < userlist.length; i++) {
-          if (userlist[i].email===this.form.email || userlist[i].password===this.form.password) {
-            localStorage.setItem("xenosUserEmail", this.form.email)
-            localStorage.setItem("xenosUserPW", this.form.password)
             return;
           }
         }
-        localStorage.removeItem("xenosUserEmail")
-        localStorage.removeItem("xenosUserPW")
+        console.log("boum");
+        
+        localStorage.removeItem("xenosUserData")
       })
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>

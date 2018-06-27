@@ -66,7 +66,6 @@ export default {
       .then(data => {
         this.User = data['hydra:member']
         console.log(data);
-        
       })
     },
     addUser() {

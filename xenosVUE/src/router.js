@@ -7,6 +7,8 @@ import Explore from './views/Explore.vue'
 import ExploreMain from './views/ExploreMain.vue'
 import ExplorePlanet from './views/ExplorePlanet.vue'
 import Account from './views/Account.vue'
+import AccountSignIn from './views/Account/AccountSignIn.vue'
+import AccountSignUp from './views/Account/AccountSignUp.vue'
 
 Vue.use(Router)
 
@@ -48,7 +50,19 @@ export default new Router({
     {
       path: '/account',
       name: 'account',
-      component: Account
+      component: Account,
+      children: [
+        {
+          path: '',
+          name: 'account-signin',
+          component: AccountSignIn
+        },
+        {
+          path: 'signup',
+          name: 'account-signUp',
+          component: AccountSignUp
+        }
+      ]
     }
   ]
 })

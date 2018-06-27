@@ -42,7 +42,6 @@ export default {
     --header-item-color:var(--main-dark-color);
     @media(min-width:768px){
       --header-item-color: #ffffff;
-
     }
   }
 

@@ -13,7 +13,7 @@
       
       <ul class="nav-list">
         <li class="nav-list-item">
-          <router-link to="/">
+          <router-link to="/" exact>
             <span class="jam jam-home nav-list-icon"></span>
             <span class="nav-list-itemLabel">Home</span>
           </router-link>
@@ -38,7 +38,7 @@
         </li>
         <li class="nav-list-item">
           <router-link to="/account">
-            <span class="jam jam-user nav-list-icon nav-list-icon--still"></span>
+            <span class="jam jam-user-circle nav-list-icon nav-list-icon--still"></span>
             <span class="nav-list-itemLabel">Account</span>
           </router-link>
         </li>
@@ -66,6 +66,17 @@ export default {
       } else {
         this.hasScroll=false;
       }
+    },
+    getUser() {
+      fetch('http://127.0.0.1:8000/api/users', {
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.User = data['hydra:member']
+        console.log(data);
+        
+      })
     }
   },
   mounted: function(){
@@ -91,7 +102,7 @@ export default {
   z-index:10;
   @media(min-width:768px){
     background-color:unset;
-    position: inherit;
+    position: fixed;
     top:0;
     bottom: inherit;
     height: 61px;
@@ -157,8 +168,9 @@ export default {
     &-item {
       width: 20%;
       @media(min-width:768px){
-        width: 10vw;
-        max-width: 110px;
+        // width: 10vw;
+        // max-width: 110px;
+        margin-left: 50px;
       }
 
       & a {
@@ -169,8 +181,12 @@ export default {
         flex-direction: column;
         align-items: center;
         font-size: 10px;
-        &.router-link-exact-active {
-          color:var(--main-orange);
+        &.router-link-active {
+          // color:var(--main-orange);
+          background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         @media(min-width:768px){
           font-family: var(--font-bold);
@@ -194,6 +210,8 @@ export default {
         margin-bottom:0;
         &--still {
           display: block;
+          font-size: 20px;
+          margin-right: 10px;
         }
       }
     }

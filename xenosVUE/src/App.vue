@@ -13,9 +13,12 @@
 
 import Header from '@/components/Header.vue'
 
+
 export default {
   components: {
     Header
+  },
+  created: function(){
   }
 }
 
@@ -62,6 +65,10 @@ body {
   --header-item-color: #ffffff;
 }
 #app {
+  @media (min-width: 768px) { 
+      
+  }
+
   height: 100%;
 }
 
@@ -127,7 +134,7 @@ label {
 
 // Button////////////////////////////////
 
-button {
+.button {
   font-family: var(--font-bold);
   padding: 12px 32px;
   font-size: 14px;
@@ -156,8 +163,9 @@ button {
   }
 
   &Container {
-    width:inherit;
+    width:min-content;
     color: white;
+    white-space: nowrap;
     text-decoration: none;
   }
 }

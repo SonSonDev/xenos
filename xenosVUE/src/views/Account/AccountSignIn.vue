@@ -1,16 +1,17 @@
 <template>
-  <section class="account_logIn">
+  <section class="account_signIn">
     
     <div class="container">
-      <form class="account_logIn-form">
-        <h4 class="account_logIn-title">Sign In</h4>
-        <label class="account_logIn-label" for="">Email</label>
-        <input class="account_logIn-input" placeholder="carl.sagan@cosmos.com" type="text">
-        <label class="account_logIn-label" for="">Password</label>
-        <input class="account_logIn-input" placeholder="6+ characters" type="text">
-        <p class="account_logIn-forgot">Forgot your password</p>
-        <OrangeButton class="account_logIn-submitButton" link="/account">Sign In</OrangeButton>
-        <router-link class="account_logIn-signInLink" to="account/signIn">
+      <form class="account_signIn-form">
+        <h4 class="account_signIn-title">Sign In</h4>
+        <label class="account_signIn-label" for="">Email</label>
+        <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" type="text">
+        <label class="account_signIn-label" for="">Password</label>
+        <input class="account_signIn-input" placeholder="6+ characters" type="text">
+        <p class="account_signIn-forgot">Forgot your password</p>
+        <OrangeButton class="account_signIn-submitButton" link="/ezeaeaz">Sign In</OrangeButton>
+        
+        <router-link class="account_signIn-signInLink" to="account/signup">
           No account ? Create one.
         </router-link>
       </form>
@@ -22,14 +23,14 @@
 import OrangeButton from "@/components/OrangeButton.vue";
 
 export default {
-name:"AccountLogIn",
+name:"AccountSignIn",
 components:{OrangeButton}
 }
 </script>
 
 <style lang="scss" scoped>
 
-.account_logIn {
+.account_signIn {
   height: 100vh;
   display: flex;
   align-items: center;
@@ -90,7 +91,7 @@ components:{OrangeButton}
     width: 100%;
     @media(min-width: 768px) {
       padding:0;
-      margin: 120px auto 0;
+      margin: 220px auto 0;
       max-width: 324px;
       height: 376px;
     }

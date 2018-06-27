@@ -1,58 +1,31 @@
 <template>
+
   <div class="explore">
     <Header/>
 
+    <div class="explore_main">
 
-    <!-- <router-link
-      :key="planet"
-      v-for="planet in planets"
-      :to="`/explore/${planet}`"
-    >
-      <button>{{planet}}</button>
-      {{$route.params.id}}
-    </router-link> -->
-
-  <div class="explore_main">
-
-    <div class="explore_main_header">
-      <h6 class="explore_main_header_subtitle">Discover</h6>
-      <h4 class="explore_main_header_title">Other worlds</h4>
-      <p class="explore_main_header_text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, itaque! Possimus itaque non, repellat sed, aliquid praesentium animi.
-      </p>
-      <h6 class="explore_main_header_headline gradientText">01. Select the planet you want to explore</h6>
-      <p class="explore_main_header_instruction">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
-      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
-      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
-      <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
-    </div>
-
-    <div class="explore_main_content">
-      <h4 class="explore_main_content_title">Mars</h4>
-      <div class="explore_main_content_next">
-        <p class="explore_main_content_next_text">Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary ...</p>
-        <iframe class="explore_main_content_next_video" src="https://www.youtube.com/embed/GF60Iuh643I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <button class="explore_main_content_next_button">Next</button>
+      <div class="explore_main_header">
+        <h6 class="explore_main_header_subtitle">Discover</h6>
+        <h4 class="explore_main_header_title">Other worlds</h4>
+        <p class="explore_main_header_text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, itaque! Possimus itaque non, repellat sed, aliquid praesentium animi.
+        </p>
+        <h6 class="explore_main_header_headline gradientText">01. Select the planet you want to explore</h6>
+        <p class="explore_main_header_instruction">Select the planet you want to explore Select the planet you want to explore</p>
+        <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+        <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
+        <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+        <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
+        <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+        <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
       </div>
-    </div>
 
-    <div class="explore_main_select">
-      <div class="explore_main_select_arrows">
-        <span class="explore_main_select_arrows_left jam jam-arrow-circle-left"></span>
-        <span class="explore_main_select_arrows_right jam jam-arrow-circle-right"></span>
-      </div>
-      <div class="explore_main_select_slider">
-        <div class="explore_main_select_slider_planet active"></div>
-        <div class="explore_main_select_slider_planet"></div>
-        <div class="explore_main_select_slider_planet"></div>
-        <div class="explore_main_select_slider_planet"></div>
-        <div class="explore_main_select_slider_circle"></div>
-      </div>
+      <transition name="slide-right">
+        <router-view class="child-view"></router-view>
+      </transition>
+
     </div>
-  </div>
 
   </div>
 </template>
@@ -61,16 +34,7 @@
 import Header from "@/components/Header.vue"
 
 export default {
-  data: function() {
-    return {
-      planets: [
-        'Uranus',
-        'Mars',
-        'Venus'
-      ]
-    }
-  },
-  name: 'explore',
+  name: 'Explore',
   components: {
     Header
   }
@@ -80,13 +44,15 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
+
+
 .explore {
   height: 100%;
   width: 100%;
 
 
-  &_main {
+  &_main, .truc {
     height: 100%;
     color: var(--main-dark-white);
     display: flex;
@@ -114,13 +80,20 @@ export default {
       color: #6A6A6A;
       font-size: 24px;
       position: relative;
-      top: 14vh;
+      top: 15vh;
+      z-index: 100;
       &_left {
         margin-left: auto;
         margin-right: 40vh;
+        &:hover {
+          color: var(--main-dark-white);
+        }
       }
       &_right {
         margin-right: auto;
+        &:hover {
+          color: var(--main-dark-white);
+        }
       }
     }
     &_slider {
@@ -129,7 +102,7 @@ export default {
       grid-template-rows: repeat(3, 28vh);
       justify-items: center;
       align-items: center;
-      transition: transform .5s linear;
+      transition: transform .5s ease-out;
       position: relative;
       &_planet {
         width: 100%;
@@ -144,8 +117,8 @@ export default {
           border: none;
         }
         &:nth-child(1) {
-          background-color: aqua;
-          background: linear-gradient(to top right,var(--gradient-from), var(--gradient-to));
+          // background-color: aqua;
+          // background: linear-gradient(to top right,var(--gradient-from), var(--gradient-to));
           grid-column: 2 / 3;
           grid-row: 1 / 2;
         }
@@ -184,7 +157,7 @@ export default {
     }
   }
   &_content {
-    height: 66vh;
+    // height: 66vh;
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;

@@ -61,6 +61,11 @@ class Zone
      */
     private $bookings;
 
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $radius;
+
     public function __construct()
     {
         $this->bookings = new ArrayCollection();
@@ -189,6 +194,18 @@ class Zone
     public function __toString()
     {
         return $this->getName();
+    }
+
+    public function getRadius(): ?string
+    {
+        return $this->radius;
+    }
+
+    public function setRadius(?string $radius): self
+    {
+        $this->radius = $radius;
+
+        return $this;
     }
     
     

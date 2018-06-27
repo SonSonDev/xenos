@@ -49,8 +49,9 @@ export default {
   --main-orange:#FF966F;
   --main-dark-color: #333333;
   --secondary-dark-color: #4F4F4F;
-  --main-grey-color: #C8C8C8;
+  --main-grey: #C8C8C8;
   --main-dark-white: #F8F8F8;
+  --main-white: #FFFFFF;
 }
 
 body {
@@ -93,6 +94,12 @@ p {
   font-size:14px;
   line-height: 22px;
   font-family: var(--font-regular);
+}
+
+label {
+  text-transform: uppercase;
+  font-size:12px;
+  font-family: var(--font-bold);
 }
 
 .gradientText {

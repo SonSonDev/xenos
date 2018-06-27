@@ -34,9 +34,7 @@
       <h4 class="explore_main_content_title">Mars</h4>
       <div class="explore_main_content_next">
         <p class="explore_main_content_next_text">Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary ...</p>
-        <div class="explore_main_content_next_video">
-          <iframe class="explore_main_content_next_video_iframe" src="https://www.youtube.com/embed/GF60Iuh643I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
+        <iframe class="explore_main_content_next_video" src="https://www.youtube.com/embed/GF60Iuh643I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <button class="explore_main_content_next_button">Next</button>
       </div>
     </div>
@@ -98,8 +96,8 @@ export default {
     position: relative;
     @media(min-width:768px){
       flex-direction: row;
-      justify-content: space-between;
       align-items: flex-start;
+      padding-right: calc(24vw + 2 * 64px);
     }
   &_select {
     height: calc(28vh * 1.86);
@@ -192,14 +190,15 @@ export default {
     margin-bottom: 80px;
     @media (min-width: 768px) {
       // width: 100%;
+      margin-top: 80px;
+
       max-width: 345px;
-      margin-right: 56vh;
+      // margin-right: 56vh;
       height: auto;
     }
     &_title {
       text-align: center;
       @media (min-width: 768px) {
-        margin-top: 120px;
         margin-bottom: 20px;
         font-size: 36px;
       }
@@ -232,10 +231,7 @@ export default {
           display: block;
           width: 100%;
           margin-top: 24px;
-          &_iframe {
-            width: 100%;
             height: auto;
-          }
         }
       }
     }
@@ -285,7 +281,7 @@ export default {
     }
     &_instruction {
       margin-top: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       &.grey {
         display: none;
         @media (min-width: 768px) {

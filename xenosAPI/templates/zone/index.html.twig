@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zone index{% endblock %}
+
+{% block body %}
+    <h1>Zone index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Temperature</th>
+                <th>Gravity</th>
+                <th>Distance</th>
+                <th>Radius</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zone in zones %}
+            <tr>
+                <td>{{ zone.id }}</td>
+                <td>{{ zone.name }}</td>
+                <td>{{ zone.description }}</td>
+                <td>{{ zone.price }}</td>
+                <td>{{ zone.temperature }}</td>
+                <td>{{ zone.gravity }}</td>
+                <td>{{ zone.distance }}</td>
+                <td>{{ zone.radius }}</td>
+                <td>
+                    <a href="{{ path('zone_show', {'id': zone.id}) }}">show</a>
+                    <a href="{{ path('zone_edit', {'id': zone.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('zone_new') }}">Create new</a>
+{% endblock %}

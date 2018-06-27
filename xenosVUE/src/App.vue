@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <!-- <Header/> -->
+    <transition name="">
+
     <router-view/>
+    </transition>
     
   </div>
 </template>
@@ -94,6 +97,7 @@ p {
 
 .gradientText {
   background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -128,14 +132,14 @@ button {
   background-image: linear-gradient(45deg, #FF5F6D, #FFC371, #FF5F6D, #FFC371 );
   box-shadow: 0px 4px 10px rgba(255, 150, 111, 0.15);
   border-radius: 50px;
-  moz-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
 
   &:hover {
     background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
@@ -153,6 +157,27 @@ button {
 
 #app {
   position: relative;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+.child-view {
+  position: absolute;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
 }
 
 </style>

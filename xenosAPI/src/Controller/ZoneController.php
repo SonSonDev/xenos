@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Zone;
-use App\Form\ZoneType;
+use App\Form\Zone1Type;
 use App\Repository\ZoneRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class ZoneController extends Controller
     public function new(Request $request): Response
     {
         $zone = new Zone();
-        $form = $this->createForm(ZoneType::class, $zone);
+        $form = $this->createForm(Zone1Type::class, $zone);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,7 +59,7 @@ class ZoneController extends Controller
      */
     public function edit(Request $request, Zone $zone): Response
     {
-        $form = $this->createForm(ZoneType::class, $zone);
+        $form = $this->createForm(Zone1Type::class, $zone);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

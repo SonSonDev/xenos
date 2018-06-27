@@ -31,7 +31,8 @@ export default {
     line-height: 1.5;
     @media(min-width: 768px){
             align-items: flex-end;
-            margin-right: 14vw;
+            margin-right: 5vw;
+            margin-left: 5vw;
         }
     &-textContainer{
         @media(min-width: 768px){
@@ -39,21 +40,24 @@ export default {
         }
     }
     &-container{
-        width: 100%;
         @media(min-width: 768px){
+            width: 100%;
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
+            align-items: center;
+            max-width: 1075px;
+            margin: 0 auto;
         }
     }
     &-imgContainer{
         height: 200px;
-        width: 50%;
+        width: 100%;
         background-color: grey;
         margin-top: 5vh;
         @media (min-width: 768px){
           max-width: 40%;
-          height: 200px;
+          max-height: 450px;
         }
     }
     &-p{

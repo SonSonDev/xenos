@@ -1,4 +1,3 @@
-
 <template>
   <div class="explore">
     <button>{{$route.params.planet}}</button>

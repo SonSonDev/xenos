@@ -28,7 +28,7 @@ export default {
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-
+  white-space: nowrap;
   &:hover {
     background-position: 100% 0;
     moz-transition: all .4s ease-in-out;
@@ -41,7 +41,7 @@ export default {
   }
 
   &Container {
-    width:inherit;
+    width:min-content;
     color: white;
     text-decoration: none;
   }

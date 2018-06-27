@@ -8,13 +8,12 @@
         <path d="M24.8736 49.7471C38.6109 49.7471 49.7471 38.6109 49.7471 24.8736C49.7471 11.1363 38.6109 4.27307e-06 24.8736 4.27307e-06C11.1363 4.27307e-06 -5.49395e-06 11.1363 -5.49395e-06 24.8736C-5.49395e-06 38.6109 11.1363 49.7471 24.8736 49.7471Z" transform="translate(145.201 145.052)" fill="white"/>
         <path d="M7.46107 14.9221C11.5817 14.9221 14.9221 11.5817 14.9221 7.46107C14.9221 3.34044 11.5817 -4.27307e-06 7.46107 -4.27307e-06C3.34043 -4.27307e-06 6.71483e-06 3.34044 6.71483e-06 7.46107C6.71483e-06 11.5817 3.34043 14.9221 7.46107 14.9221Z" transform="translate(154.152 154.013)" fill="#333333"/>
       </svg>
-
     </div>
     <nav class="nav">
       
       <ul class="nav-list">
         <li class="nav-list-item">
-          <router-link to="/">
+          <router-link to="/" exact>
             <span class="jam jam-home nav-list-icon"></span>
             <span class="nav-list-itemLabel">Home</span>
           </router-link>
@@ -39,7 +38,7 @@
         </li>
         <li class="nav-list-item">
           <router-link to="/account">
-            <span class="jam jam-user nav-list-icon nav-list-icon--still"></span>
+            <span class="jam jam-user-circle nav-list-icon nav-list-icon--still"></span>
             <span class="nav-list-itemLabel">Account</span>
           </router-link>
         </li>
@@ -67,6 +66,17 @@ export default {
       } else {
         this.hasScroll=false;
       }
+    },
+    getUser() {
+      fetch('http://127.0.0.1:8000/api/users', {
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.User = data['hydra:member']
+        console.log(data);
+        
+      })
     }
   },
   mounted: function(){
@@ -92,7 +102,7 @@ export default {
   z-index:10;
   @media(min-width:768px){
     background-color:unset;
-    position: inherit;
+    position: fixed;
     top:0;
     bottom: inherit;
     height: 61px;
@@ -158,8 +168,9 @@ export default {
     &-item {
       width: 20%;
       @media(min-width:768px){
-        width: 10vw;
-        max-width: 110px;
+        // width: 10vw;
+        // max-width: 110px;
+        margin-left: 50px;
       }
 
       & a {
@@ -170,8 +181,12 @@ export default {
         flex-direction: column;
         align-items: center;
         font-size: 10px;
-        &.router-link-exact-active {
-          color:var(--main-orange);
+        &.router-link-active {
+          // color:var(--main-orange);
+          background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
         @media(min-width:768px){
           font-family: var(--font-bold);
@@ -195,6 +210,8 @@ export default {
         margin-bottom:0;
         &--still {
           display: block;
+          font-size: 20px;
+          margin-right: 10px;
         }
       }
     }

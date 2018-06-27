@@ -12,9 +12,12 @@
 
 import Header from '@/components/Header.vue'
 
+
 export default {
   components: {
     Header
+  },
+  created: function(){
   }
 }
 
@@ -48,8 +51,9 @@ export default {
   --main-orange:#FF966F;
   --main-dark-color: #333333;
   --secondary-dark-color: #4F4F4F;
-  --main-grey-color: #C8C8C8;
+  --main-grey: #C8C8C8;
   --main-dark-white: #F8F8F8;
+  --main-white: #FFFFFF;
 }
 
 body {
@@ -60,6 +64,10 @@ body {
   --header-item-color: #ffffff;
 }
 #app {
+  @media (min-width: 768px) { 
+      
+  }
+
   height: 100%;
 }
 
@@ -92,6 +100,12 @@ p {
   font-size:14px;
   line-height: 22px;
   font-family: var(--font-regular);
+}
+
+label {
+  text-transform: uppercase;
+  font-size:12px;
+  font-family: var(--font-bold);
 }
 
 .gradientText {
@@ -148,8 +162,9 @@ button {
   }
 
   &Container {
-    width:inherit;
+    width:min-content;
     color: white;
+    white-space: nowrap;
     text-decoration: none;
   }
 }

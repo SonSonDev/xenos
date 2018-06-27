@@ -6,9 +6,7 @@
         <h4 class="home_ourMission-desc-title">A new way to explore</h4>
         <p class="home_ourMission-desc-text">Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.</p>
         <p class="home_ourMission-desc-text">For the first time in history, everyone will be able to help them in this tremendous task.</p>
-        <a class="buttonContainer" href="">
-          <button class="button">Learn more</button>
-        </a>
+        <OrangeButton link="/mission">Learn More</OrangeButton>
       </div>
     </div>
 
@@ -68,8 +66,11 @@
 </template>
 
 <script>
+import OrangeButton from '@/components/OrangeButton.vue';
+
 export default {
   name:"HomeMission",
+  components: {OrangeButton},
   props:{
   },
   data : function(){
@@ -224,6 +225,7 @@ export default {
         &-date {
           font-family: var(--font-bold);
           font-size:40px;
+          line-height: 50px;
         }
         &-title {
           margin-bottom:20px;

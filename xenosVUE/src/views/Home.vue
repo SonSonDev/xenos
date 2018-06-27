@@ -32,9 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  body {
 
-  }
   .home {
     background-color: white;
     position: absolute;
@@ -45,6 +43,13 @@ export default {
     @media(min-width:768px){
       --header-item-color: #ffffff;
 
+    }
+  }
+
+  .container {
+    @media (min-width: 1440px) {
+      padding-left: 200px;
+      padding-right: 200px;
     }
   }
 

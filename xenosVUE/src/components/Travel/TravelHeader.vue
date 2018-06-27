@@ -1,3 +1,4 @@
+
 <template>
     <section class="travel_header">
         <h1 class="travel_header-title">Take control</h1>

@@ -10,6 +10,7 @@
 import Header from "@/components/Header.vue"
 import TravelHeader from "@/components/Travel/TravelHeader.vue"
 import TravelBanner from "@/components/Travel/TravelBanner.vue"
+
 export default {
   name: 'rover',
   components: {

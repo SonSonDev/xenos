@@ -1,6 +1,5 @@
 <template>
   <div class="explore">
-    <!-- <Header/> -->
     <button>{{$route.params.planet}}</button>
   </div>
 </template>

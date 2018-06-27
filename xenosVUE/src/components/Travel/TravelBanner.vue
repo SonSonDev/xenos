@@ -13,9 +13,9 @@ export default {
 
 <style lang="scss" scoped>
 .travel_banner{
-    width: 100%;
-    height: 100%;
-    background-image: url('../../assets/img/bg-shape.svg');
-    background-size: fill;
+    width: 100vw;
+    height: 20vh;
+    // background-image: url('../../assets/img/bg-shape.svg');
+    // background-size: fill;
 }
 </style>

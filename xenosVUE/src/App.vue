@@ -51,10 +51,14 @@ export default {
 }
 
 body {
+  height: 100vh;
   overflow-x: hidden;
   background-color: var(--main-dark-color);
   --header-color:var(--main-dark-color);
   --header-item-color: #ffffff;
+}
+#app {
+  height: 100%;
 }
 
 h1 {
@@ -78,12 +82,20 @@ h5 {
   font-family: var(--font-regular);
 }
 h6 {
+  text-transform: uppercase;
   font-size:12px;
   font-family: var(--font-bold);
 }
 p {
   font-size:14px;
+  line-height: 22px;
   font-family: var(--font-regular);
+}
+
+.gradientText {
+  background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {

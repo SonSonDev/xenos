@@ -172,7 +172,7 @@ export default {
     border-radius: 4px;
     border: none;
     margin-top: 8px;
-    background-color: var(--secondary-dark-color);
+    background: var(--secondary-dark);
     margin-bottom: 20px;
     box-sizing: border-box;
     color: var(--main-white);
@@ -185,7 +185,7 @@ export default {
   &-checkbox {
     width: 20px;
     height: 20px;
-    color: var(--secondary-dark-color);
+    color: var(--secondary-dark);
     margin-right: 10px;
     &Container {
       display: flex;

@@ -1,46 +1,41 @@
 <template>
     <section class="travel_banner">
-        <img class="travel_banner-rover" src="../../assets/img/rover.svg" alt="">
-        <img class="travel_banner-imgMobile" src="../../assets/img/bg-rover-shape.svg" alt="">
-        <img class="travel_banner-imgDesktop" src="../../assets/img/bg-rover-desktop-shape.svg" alt="">
+       <div class="travel_banner-awesome">
+            <Wave class="travel_banner-wave" color="#333333" is-top="true"/>
+            <img class="travel_banner-img" src="../../assets/img/rover.svg" alt="">
+            <Wave class="travel_banner-wave" color="#333333" />
+        </div>
     </section>
 </template>
 
 <script>
 
+import Wave from "@/components/Wave.vue"
+
 export default {
-    name:"TravelBanner"
+    name:"TravelBanner",
+    components: {
+        Wave
+    }
 }
+
 </script>
 
 <style lang="scss" scoped>
 .travel_banner{
     margin-bottom: 15vh;
-    &-rover{
-        width: 90%;
-        position: absolute;
-        left: 5%;
-        top: 57%;
-        z-index: -1;
-    }
-    &-imgMobile{
+    &-awesome{
+        --header-color: var(--main-dark);
         width: 100%;
-        position: relative;
-        top: 5%;
-        z-index: -2;
-        @media (min-width:768px) {
-            display: none;
-        }
+        height: 450px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
+        margin-bottom: 40px;
+        background-size: cover;
+        background-position: center;
     }
-    &-imgDesktop{
-        display: none;
-        @media (min-width:768px) {
-            display: block;
-            position: relative;
-            z-index: -1;
-            width: 100%;
-        }
-    }
-
 }
 </style>

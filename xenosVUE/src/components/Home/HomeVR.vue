@@ -25,7 +25,7 @@ export default {
 
   .home_VR {
     margin-top:80px;
-    margin-bottom: 160px;
+    margin-bottom: 200px;
     @media(min-width: 768px){
       margin-top:120px;
       display: flex;

@@ -95,7 +95,7 @@ export default {
 <style lang="scss" scoped>
 
 .footer {
-  background-color: var(--secondary-dark-color);
+  background-color: var(--secondary-dark);
   // background: linear-gradient(39.04deg, #FF5F6D 15.26%, #FFC371 84.74%);
 
 

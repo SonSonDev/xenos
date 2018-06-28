@@ -5,6 +5,7 @@
     <HomeMission/>
     <HomeRover/>
     <HomeExplore/>
+    <HomeVR/>
     <HomeTwitch/>
     <!-- <Wave color="#333333"></Wave> -->
     <Footer page-background="white"/>
@@ -18,6 +19,7 @@ import HomeHero from '../components/Home/HomeHero.vue';
 import HomeMission from '../components/Home/HomeMission.vue';
 import HomeRover from '../components/Home/HomeRover.vue';
 import HomeExplore from '../components/Home/HomeExplore.vue';
+import HomeVR from '../components/Home/HomeVR.vue';
 import HomeTwitch from '../components/Home/HomeTwitch.vue';
 import Wave from '../components/Wave.vue';
 import Footer from '../components/Footer.vue';
@@ -25,7 +27,7 @@ import Footer from '../components/Footer.vue';
 export default {
   name: 'Home',
   components: {
-    Header,HomeHero,HomeMission,HomeRover,HomeExplore,HomeTwitch,Footer,Wave
+    Header,HomeHero,HomeMission,HomeRover,HomeExplore,HomeVR,HomeTwitch,Footer,Wave
   }
 }
 

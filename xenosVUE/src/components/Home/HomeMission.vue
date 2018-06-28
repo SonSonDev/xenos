@@ -55,11 +55,15 @@
 
       </div>
       <div class="home_ourMission-timeline-desc">
+
         <div class="container">
           <p class="home_ourMission-timeline-desc-date">{{info[active].date}}</p>
           <h3 class="home_ourMission-timeline-desc-title">{{info[active].title}}</h3>
           <p class="home_ourMission-timeline-desc-text">{{info[active].description}}</p>
         </div>
+        <img src="@/assets/img/1.png" class="home_ourMission-timeline-desc-bg">
+
+
       </div>
     </div>
   </section>
@@ -213,16 +217,30 @@ export default {
       &-desc {
         color:#ffffff;
 
-        background: linear-gradient(39.95deg, #FF5F6D 15.19%, #FFC371 84.81%);
+        // background: linear-gradient(39.95deg, #FF5F6D 15.19%, #FFC371 84.81%);
         border-radius:30px;
         padding-top:41px;
         padding-bottom:83px;
-
+        position:relative;
         @media (min-width:768px) {
         margin-top: 80px;
           width:60vw;
         }
-      
+        &-bg {
+          position:absolute;
+          z-index:0;
+          width:98%;
+          height:98%;
+          left:50%;
+          top:50%;
+          transform:translate(-50%,-50%);
+        }
+        & .container {
+          padding-top:30px; 
+          padding-bottom:30px; 
+          position: relative;
+          z-index: 1;
+        }
 
         &-date {
           font-family: var(--font-bold);

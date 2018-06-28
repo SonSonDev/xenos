@@ -8,6 +8,7 @@
     <HomeVR/>
     <HomeDonation/>
     <HomeTwitch/>
+    <HomePartners/>
     <!-- <Wave color="#333333"></Wave> -->
     <Footer page-background="white"/>
   </div>
@@ -23,13 +24,14 @@ import HomeExplore from '../components/Home/HomeExplore.vue';
 import HomeVR from '../components/Home/HomeVR.vue';
 import HomeDonation from '../components/Home/HomeDonation.vue';
 import HomeTwitch from '../components/Home/HomeTwitch.vue';
+import HomePartners from '../components/Home/HomePartners.vue';
 import Wave from '../components/Wave.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Home',
   components: {
-    Header,HomeHero,HomeMission,HomeRover,HomeExplore,HomeVR,HomeDonation,HomeTwitch,Footer,Wave
+    Header,HomeHero,HomeMission,HomeRover,HomeExplore,HomeVR,HomeDonation,HomeTwitch,HomePartners,Footer,Wave
   }
 }
 

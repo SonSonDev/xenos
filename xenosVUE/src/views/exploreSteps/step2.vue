@@ -1,27 +1,92 @@
 <template>
-  <div class="explore">
-    <button>{{$route.params.planet}}</button>
+  <div class="step2">
+
+    <!-- <button
+    v-for="zone in zones" :key="zone.id">
+    {{ zone }}
+    </button> -->
+    <E2select
+      :zones="zones"
+      :planet="choice"
+      @select="onSelect"
+    />
+    <E2main
+      @nextStep="$emit('nextStep', zones[current])"
+      v-if="current !== null"
+      :zone="zones[current]"
+    />
+
+
   </div>
 </template>
 
 <script>
-import Header from "@/components/Header.vue"
+import E2main from "@/components/Explore/E2main.vue"
+import E2select from "@/components/Explore/E2select.vue"
 
 export default {
+  name: 'explore',
+  components: { E2main, E2select },
+  props: ['prevChoice'],
   data: function() {
     return {
-      planets: [
-        'Uranus',
-        'Mars',
-        'Venus'
-      ]
+      zones: [],
+      current: null,
+      choice: null
     }
   },
-  name: 'explore',
-  components: {
-    Header
+  created: function () {
+    this.choice = this.prevChoice['@type']==='Planet' && this.prevChoice
+    if (!this.choice) {
+      fetch(this.$baseUrl + '/api/planets', {method: 'GET'})
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        this.choice = data['hydra:member'].filter((item) => {
+          return (item.name === this.$route.params.planet)
+        })[0]
+        console.log(this.choice);
+        
+      })
+      .then(() => {
+        this.fetchZones()
+      })
+    }
+    this.fetchZones()
+  },
+  methods: {
+    onSelect: function (id) {
+      this.current = id
+    },
+    fetchZones: function () {
+      fetch(this.$baseUrl + '/api/zones', {
+        method: 'GET'
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.zones = data['hydra:member'].filter((item) => {
+          return (item.planet === this.choice['@id'])
+        })
+      })
+    }
   }
 }
 
 
 </script>
+
+<style lang="scss" scoped>
+.step2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 70px;
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    padding-top: 80px;
+  }
+}
+</style>

@@ -8,6 +8,7 @@ import Rover from './views/Rover.vue'
 import Explore from './views/Explore.vue'
 import Step1 from './views/exploreSteps/step1.vue'
 import Step2 from './views/exploreSteps/step2.vue'
+import Step3 from './views/exploreSteps/step3.vue'
 
 import Account from './views/Account.vue'
 import AccountSignIn from './views/Account/AccountSignIn.vue'
@@ -29,6 +30,7 @@ export default new Router({
       children: [
         { path: '', component: Step1 },
         { path: ':planet', component: Step2 },
+        { path: ':planet/:zone', component: Step3 },
       ]},
       {
         path: '/account',

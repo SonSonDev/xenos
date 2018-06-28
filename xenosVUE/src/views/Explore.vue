@@ -5,7 +5,10 @@
     <div class="explore_main">
       <E0header/>
       <transition name="slide-right">
-        <router-view class="child-view"></router-view>
+        <router-view
+        @nextStep="log"
+        :prevChoice="save"
+        class="child-view"></router-view>
       </transition>
     </div>
   </div>
@@ -17,7 +20,19 @@ import E0header from "@/components/Explore/E0header.vue"
 
 export default {
   name: 'Explore',
-  components: { Header, E0header }
+  components: { Header, E0header },
+  data: function () {
+    return {
+      save: '',
+      current: 0
+    }
+  },
+  methods: {
+    log: function (data) {
+      this.save = data
+      this.current += 1
+    }
+  }
 }
 
 
@@ -32,7 +47,7 @@ export default {
   width: 100%;
   overflow: hidden;
   @media(min-width: 768px){
-    margin-top: 101px; 
+    padding-top: 101px; 
 
   }
   &_main {

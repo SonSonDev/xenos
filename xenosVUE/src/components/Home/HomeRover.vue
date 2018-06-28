@@ -46,23 +46,25 @@ export default {
       }
       &-onTitle {
         text-transform : uppercase;
-        color: var(--main-grey-color);
+        color: var(--main-grey);
         margin-bottom:2px;
       }
       &-title {
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
       }
       &-text {
         line-height: 22px;
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
       }
     }
 
     &-img {
       max-width:100%;
       margin-bottom:20px;
+      position: relative;
+      z-index: 1;
       &Container {
         justify-content: center;
         margin:0 auto;
@@ -72,7 +74,7 @@ export default {
 
         &::after {
           content:"";
-          z-index:-1;
+          z-index:0;
           position:absolute;
           background: linear-gradient(39.95deg, #FF5F6D 15.19%, #FFC371 84.81%);
           border-radius:100%;

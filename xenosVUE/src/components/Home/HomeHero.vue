@@ -60,9 +60,7 @@ export default {
   &-title {
     line-height: 43px;
     margin-bottom: 10px;
-    @media(min-width:768px){
 
-    }
   }
   &-sub {
     line-height: 22px;
@@ -76,6 +74,9 @@ export default {
   }
   & .container {
     margin-bottom:40px;
+    @media(min-width:768px){
+      padding-bottom: 140px;
+    }
   }
 
 }

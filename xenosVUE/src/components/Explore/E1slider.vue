@@ -2,11 +2,11 @@
   <div class="explore_main_select">
     <div class="explore_main_select_arrows">
       <span
-        @click="$emit('nextPlanet')"
+        @click="$emit('prevPlanet')"
         class="explore_main_select_arrows_left jam jam-arrow-circle-left"
       ></span>
       <span
-        @click="$emit('prevPlanet')"
+        @click="$emit('nextPlanet')"
         class="explore_main_select_arrows_right jam jam-arrow-circle-right"
       ></span>
     </div>
@@ -65,6 +65,7 @@ export default {
         }
       }
       &_slider {
+        // pointer-events: none;
         display: grid;
         grid-template-columns: repeat(3, 28vh);
         grid-template-rows: repeat(3, 28vh);
@@ -79,7 +80,7 @@ export default {
           transform: scale(.4);
           transition: transform .5s ease-out;
           background-color: #fff;
-          border: 10px solid var(--main-dark-color);
+          border: 10px solid var(--main-dark);
           &.active {
             transform: scale(1.2);
             border: none;
@@ -108,14 +109,14 @@ export default {
           width: 65%;
           height: 65%;
           border-radius: 50%;
-          border: 1px dashed var(--main-grey-color);
+          border: 1px dashed var(--main-grey);
           grid-column: 1 / 4;
           grid-row: 1 / 4;
         }
         &_hide {
           width: 100%;
           height: 56vw;
-          background-color: var(--main-dark-color);
+          background-color: var(--main-dark);
           position: absolute;
           bottom: 0;
           left: 0;

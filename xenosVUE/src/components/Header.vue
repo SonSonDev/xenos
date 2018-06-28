@@ -110,7 +110,7 @@ export default {
     &.fixed {
       padding-top:0;
       position: fixed;
-      background-color: var(--main-dark-color);
+      background-color: var(--main-dark);
       
       & .header-logo1{
         display:none;

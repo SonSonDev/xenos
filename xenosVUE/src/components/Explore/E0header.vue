@@ -7,11 +7,11 @@
       </p>
       <h6 class="explore_main_header_headline gradientText">01. Select the planet you want to explore</h6>
       <p class="explore_main_header_instruction">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <h6 class="explore_main_header_headline grey">02. Select the zone you want to explore on</h6>
       <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <h6 class="explore_main_header_headline grey">03. Select when you want to explore</h6>
       <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
-      <h6 class="explore_main_header_headline grey">01. Select the planet you want to explore</h6>
+      <h6 class="explore_main_header_headline grey">04. Done !</h6>
       <p class="explore_main_header_instruction grey">Select the planet you want to explore Select the planet you want to explore</p>
     </div>
 </template>
@@ -20,19 +20,20 @@
 .explore {
   &_main {
     &_header {
+      margin: 0 auto;
       color: var(--main-dark-white);
       display: flex;
       flex-direction: column;
       padding: 26px 64px;
       max-width: 400px;
       @media (min-width: 768px) {
-        margin-top: 80px;
+        margin: 80px;
         padding: 0 64px;
         width: 100%;
       }
       &_subtitle {
         margin-bottom: 2px;
-        color: var(--main-grey-color);
+        color: var(--main-grey);
         display: none;
         @media (min-width: 768px) {
           display: block;
@@ -56,11 +57,11 @@
         margin-top: 16px;
         &.grey {
           display: none;
-        }
-        @media (min-width: 768px) {
-          margin-top: 0;
-          display: block;
-          color: var(--secondary-dark-color);
+          @media (min-width: 768px) {
+            margin-top: 0;
+            display: block;
+            color: var(--secondary-dark);
+          }
         }
       }
       &_instruction {
@@ -70,7 +71,7 @@
           display: none;
           @media (min-width: 768px) {
             display: block;
-            color: var(--secondary-dark-color);
+            color: var(--secondary-dark);
           }
         }
       }

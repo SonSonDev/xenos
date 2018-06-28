@@ -9,6 +9,7 @@ import Explore from './views/Explore.vue'
 import Step1 from './views/exploreSteps/step1.vue'
 import Step2 from './views/exploreSteps/step2.vue'
 import Step3 from './views/exploreSteps/step3.vue'
+import Step4 from './views/exploreSteps/step4.vue'
 
 import Account from './views/Account.vue'
 import AccountSignIn from './views/Account/AccountSignIn.vue'
@@ -31,6 +32,7 @@ export default new Router({
         { path: '', component: Step1 },
         { path: ':planet', component: Step2 },
         { path: ':planet/:zone', component: Step3 },
+        { path: ':planet/:zone/ok', component: Step4 },
       ]},
       {
         path: '/account',
@@ -54,5 +56,8 @@ export default new Router({
           }
         ]
       }
-  ]
+  ],
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 })

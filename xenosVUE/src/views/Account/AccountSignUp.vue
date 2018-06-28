@@ -66,7 +66,6 @@ export default {
       .then(response => response.json())
       .then(data => {
         this.User = data['hydra:member']
-        console.log(data);
       })
     },
     addUser() {
@@ -79,7 +78,6 @@ export default {
         body: '{"email": "' + this.form.email + '", "password": "' + this.form.password + '", "firstname":"' + this.form.firstname + '", "lastname":"' + this.form.lastname + '"}'
       })
       .then(function() {
-        console.log('{"email": "' + this.form.email + '", "password": "' + this.form.password + '", "firstname":"' + this.form.firstname + '", "lastname":"' + this.form.lastname + '"}')
         this.getUser()
         this.form = {
           firstname:"",
@@ -89,6 +87,9 @@ export default {
           cpassword:""
         }
       }.bind(this))
+      .then(() => {
+        this.$router.push('/account/signin')
+      })
     },
     deleteUser(id) {
       fetch('http://127.0.0.1:8000/api/users/'+id, {
@@ -100,7 +101,6 @@ export default {
     },
     signUp(){
       if (this.form.password !== this.form.cpassword || !this.form.checkbox || this.form.firstname ==="" || this.form.lastname==="" || this.form.email==="") {
-        console.log("tu t'es trompé!");
         this.form.password="";
         this.form.cpassword=""
         this.form.checkbox=false
@@ -108,7 +108,7 @@ export default {
         this.form.error=true
       } else {
         this.addUser()
-            this.$router.push('/account/signin')
+        this.$router.push('/account/signin')
       }
     }
   },

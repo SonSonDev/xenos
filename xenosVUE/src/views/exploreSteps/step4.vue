@@ -1,46 +1,62 @@
 <template>
   <div class="step4">
-    <h4 class="title">
-      Your summary
-    </h4>
-    <div class="recap">
-      <div class="ticket">
-        <div class="content">
-          <div class="planet">
-            <div class="ball"></div>
-          </div>
-          <div class="title">
-            <p>{{planet.name}} - {{zone.name}}</p>
-          </div>
-          <div class="details">
-            <p>{{`${time.date[0]} / ${time.date[1]} / ${time.date[2]}`}}</p>
-            <p>{{`${time.hour[0]} : ${time.hour[1]}`}}</p>
-          </div>
-        </div>
-        <div class="hide"></div>
-        <div class="hide"></div>
-        <div class="hide"></div>
-        <div class="hide"></div>
-      </div>
-      <h4 class="price">
-        <span class="gradientText">Price: </span>{{zone.price}} $
-      </h4>
-    </div>
+
+    <E4summary
+      :planet="planet"
+      :zone="zone"
+      :time="time"
+    />
+
+    <E4connect v-if="!user"/>
+    <E4payment v-else />
+
+
+    <transition name="slide-right">
+      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/done`">
+        <button
+          @click="pay"
+        >Confirm</button>
+      </router-link>
+    </transition>
   </div>
 </template>
 
 <script>
+import E4summary from '@/components/Explore/E4summary.vue'
+import E4connect from '@/components/Explore/E4connect.vue'
+import E4payment from '@/components/Explore/E4payment.vue'
 
 export default {
   name: 'step4',
   props: ['planet', 'zone', 'time'],
+  components: { E4summary, E4connect, E4payment },
   data: function() {
     return {
+      user: null
     }
   },
   created: function () {
+    this.user = JSON.parse(window.localStorage.getItem('xenosUserData'))
   },
   methods: {
+    pay: function () {
+      fetch(this.$baseUrl + '/api/bookings', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: `
+          {
+            "userId": "${this.user['@id']}",
+            "zoneId": "${this.zone['@id']}",
+            "day": "${this.time.date[2]}-${this.time.date[1]}-${this.time.date[0]}T${this.time.hour[0]}:${this.time.hour[1]}:00+00:00",
+            "hour": "${this.time.date[2]}-${this.time.date[1]}-${this.time.date[0]}T${this.time.hour[0]}:${this.time.hour[1]}:00+00:00",
+            "endHour": "${this.time.date[2]}-${this.time.date[1]}-${this.time.date[0]}T${this.time.hour[0]}:${this.time.hour[1]}:00+00:00"
+          }
+        `
+      })
+    }
   }
 }
 
@@ -48,69 +64,12 @@ export default {
 
 <style lang="scss" scoped>
 .step4 {
-  color: var(--main-dark-white);
-  padding: 0 64px;
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (min-width: 768px) {
-    padding-top: 80px;
-  }
-  > .title {
-    margin-bottom: 20px;
-    @media (min-width: 768px) {
-      font-size: 36px;
-    }
-  }
-  .recap {
-    .ticket {
-      position: relative;
-      background: linear-gradient(to right,var(--gradient-from), var(--gradient-to));
-      padding: 14px;
-      .content {
-        display: grid;
-        grid-template-columns: 100px 150px;
-        grid-template-rows: 30px 70px;
-        justify-items: center;
-        align-items: center;
-        > div {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          border: 1px solid white;
-          padding: 10px;
-        }
-        .planet {
-          grid-column: span 1;
-          grid-row: span 2;
-          border-right: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          .ball {
-            width: 80%;
-            height: 80%;
-            border-radius: 100%;
-            background: linear-gradient(to right,lime, yellow);
-          }
-        }
-        .title {
-          border-bottom: none;
-        }
-        .details {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      .hide {
-        position: absolute;
-      }
-    }
-    .price {
-      text-align: center;
-      margin-top: 20px;
-    }
+  button {
+    margin-top: 10px;
   }
 }
 </style>

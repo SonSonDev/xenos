@@ -40,7 +40,7 @@
           <router-link to="/account">
             <span class="jam jam-user-circle nav-list-icon nav-list-icon--still"></span>
             <span v-if="!connected" class="nav-list-itemLabel">Account</span>
-            <span v-else class="nav-list-itemLabel">Connecté</span>
+            <span v-else class="nav-list-itemLabel">My dashboard</span>
           </router-link>
         </li>
       </ul>

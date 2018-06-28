@@ -41,12 +41,9 @@ export default {
       fetch(this.$baseUrl + '/api/planets', {method: 'GET'})
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         this.choice = data['hydra:member'].filter((item) => {
           return (item.name === this.$route.params.planet)
         })[0]
-        console.log(this.choice);
-        
       })
       .then(() => {
         this.fetchZones()

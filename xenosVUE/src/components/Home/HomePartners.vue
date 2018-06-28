@@ -2,8 +2,8 @@
   <section class="home_partners">
     <div class="container">
       <h4 class="home_partners-title">Our partners</h4>
-      <img class="home_partners-img-mobile" src="../../assets/img/mobilepartnerslogos.svg" alt="">
-      <img class="home_partners-img-desktop" src="../../assets/img/desktoppartnerslogos.svg" alt="">
+      <img class="home_partners-img-mobile" src="../../assets/img/mobilepartnerslogos.png" alt="">
+      <img class="home_partners-img-desktop" src="../../assets/img/desktoppartnerslogos.png" alt="">
     </div>
   </section>
 </template>

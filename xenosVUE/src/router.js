@@ -13,6 +13,7 @@ import Step3 from './views/exploreSteps/step3.vue'
 import Account from './views/Account.vue'
 import AccountSignIn from './views/Account/AccountSignIn.vue'
 import AccountSignUp from './views/Account/AccountSignUp.vue'
+import AccountDashboard from './views/Account/AccountDashboard.vue'
 
 Vue.use(Router)
 
@@ -37,7 +38,7 @@ export default new Router({
         component: Account,
         children: [
           {
-            path: '',
+            path: 'signin',
             name: 'account-signin',
             component: AccountSignIn
           },
@@ -45,6 +46,11 @@ export default new Router({
             path: 'signup',
             name: 'account-signUp',
             component: AccountSignUp
+          },
+          {
+            path: 'dashboard',
+            name: 'account-dashboard',
+            component: AccountDashboard
           }
         ]
       }

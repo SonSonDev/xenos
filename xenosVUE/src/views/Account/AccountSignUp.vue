@@ -3,23 +3,38 @@
     
     <div class="container">
       <form class="account_signUp-form" v-on:submit.prevent="signUp">
-        <h4 class="account_signUp-title">Create your account</h4>
-        <label class="account_signUp-label" for="">First Name</label>
-        <input class="account_signUp-input" v-model="form.firstname" placeholder="Carl" type="text">
-        <label class="account_signUp-label" for="">Last Name</label>
-        <input class="account_signUp-input" v-model="form.lastname" placeholder="Sagan" type="text">
+        <h1 class="account_signUp-title">Create your account</h1>
+        <h4 class="account_signUp-subTitle gradientText">And become an explorer</h4>
+        <div class="account_signUp-nameContainer">
+          <div class="account_signUp-nameContainer-part">
+            <label class="account_signUp-label" for="">First Name</label>
+            <input class="account_signUp-input" v-model="form.firstname" 
+            placeholder="Carl" type="text">
+          </div>
+          <div class="account_signUp-nameContainer-part">
+            <label class="account_signUp-label" for="">Last Name</label>
+            <input class="account_signUp-input" v-model="form.lastname" placeholder="Sagan" type="text">
+          </div>
+        </div>
         <label class="account_signUp-label" for="">Email</label>
         <input class="account_signUp-input" v-model="form.email" placeholder="carl.sagan@cosmos.com" type="text">
         <label class="account_signUp-label" for="">Password</label>
         <input class="account_signUp-input" v-model="form.password" type="password" placeholder="6+ characters">
         <label class="account_signUp-label" for="">Confirm Password</label>
         <input class="account_signUp-input" v-model="form.cpassword" type="password" placeholder="6+ characters">
-        
+
+        <div class="account_signUp-checkboxContainer">
+          <input class="account_signUp-checkbox" type="checkbox" name="termcondition" id="termcondition" v-model="form.checkbox">
+          <label class="account_signUp-checkbox-label">I agree to the <a class="account_signUp-checkbox-labelLink">terms & conditions</a></label>
+        </div>
+
         <div class="buttonContainer account_signUp-submitButton">
           <input type="submit" class="button" value="Sign Up">
         </div>
-        <router-link class="account_signUp-signUpLink" to="/account/">Already have an account ? Sign In</router-link>
+
+
       </form>
+        <p class="account_signUp-signUpLink-text" >Already have an account ? <router-link class="account_signUp-signUpLink gradientText" to="/account">Sign In</router-link></p>
     </div>
   </section>
 </template>
@@ -37,7 +52,8 @@ export default {
         lastname:"",
         email:"",
         password:"",
-        cpassword:""
+        cpassword:"",
+        checkbox:false
       }
     }
   },
@@ -50,7 +66,6 @@ export default {
       .then(data => {
         this.User = data['hydra:member']
         console.log(data);
-        
       })
     },
     addUser() {
@@ -83,8 +98,11 @@ export default {
       }.bind(this))
     },
     signUp(){
-      if (this.form.password !== this.form.cpassword) {
+      if (this.form.password !== this.form.cpassword || this.form.checkbox) {
         console.log("tu t'es trompé!");
+        this.form.password="";
+        this.form.cpassword=""
+        this.form.checkbox=false
       } else {
         this.addUser()
         window.location.href = "/account"
@@ -100,72 +118,121 @@ export default {
 <style lang="scss" scoped>
 
 .account_signUp {
-  padding-top: 63px;
+  
   display: flex;
   align-items: center;
   @media (min-width: 768px){
-    height: inherit;
-    &-form {
-      width: 100%;
+    & .container {
+      max-width:466px;
+      padding: 0;
+      margin: 0 auto;
     }
   }
   &-form {
+    margin-top:40px;
     display: flex;
     flex-direction: column;
+      box-sizing: border-box;
     
-    border: 1px dashed var(--main-orange);
-    border-radius: 4px;
-    padding:40px 20px 40px;
+    
     @media (min-width: 768px) {
-      height: inherit;
-      
+      margin-top: 181px;
+    }
+  }
+
+  &-nameContainer {
+    display: flex;
+    justify-content: space-between;
+
+    &-part {
+      width: 45%;
+      & input {
+        width: 100%;
+      }
     }
   }
   &-title {
     color: var(--main-white);
-    margin-bottom: 50px;
     text-align: center;
-    align-self: center;
+    margin-bottom: 8px;
+  }
+  &-subTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      
+    }
   }
   &-label {
-    color:var(--main-white);
-    margin-bottom: 4px;
+    color:var(--main-white);    
   }
   &-input {
-    padding: 6px 10px;
+    padding: 10px 8px;
     border-radius: 4px;
     border: none;
-    
+    margin-top: 8px;
+    background: var(--secondary-dark);
     margin-bottom: 20px;
-    
+    box-sizing: border-box;
+    color: var(--main-white);
+
     &::placeholder {
-      color: var(--main-grey);
+      color: #7F7F7F;
+      // color: var(--main-grey);
+    }
+  }
+  &-checkbox {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary-dark);
+    margin-right: 10px;
+    &Container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      @media (min-width: 768px) {
+        justify-content: center;  
+      }
+    }
+    &-label {
+      text-transform: initial;
+      font-size:14px;
+      line-height: 22px;
+      font-family: var(--font-regular);
+      color: var(--main-white);
+      &Link {
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--main-white);
+        font-family: var(--font-bold);
+      }
     }
   }
   &-forgot {
     color: var(--main-white);
     text-align: center;
-    font-family: var(--font-bold);
-    margin-bottom: 30px; 
+    font-family: var(--font-bold); 
   }
   &-submitButton {
     align-self: center;
+    margin-bottom: 20px;
   }
   &-signUpLink {
-    color : var(--main-white);
-    align-self: center;
-    font-family: var(--font-bold);
     text-decoration: none;
-    margin-top: 10px;
+    cursor: pointer;
+    &-text {
+      color : var(--main-white);
+      font-family: var(--font-bold);
+      text-align: center;
+    }
   }
   & .container {
     width: 100%;
     @media(min-width: 768px) {
-      padding:0;
-      margin: 120px auto 0;
-      max-width: 324px;
-      
+
     }
   }
+
 }
 </style>

@@ -39,7 +39,8 @@
         <li class="nav-list-item">
           <router-link to="/account">
             <span class="jam jam-user-circle nav-list-icon nav-list-icon--still"></span>
-            <span class="nav-list-itemLabel">Account</span>
+            <span v-if="!connected" class="nav-list-itemLabel">Account</span>
+            <span v-else class="nav-list-itemLabel">Connecté</span>
           </router-link>
         </li>
       </ul>
@@ -56,7 +57,9 @@ export default {
   },
   data: function(){
     return {
-      hasScroll:false
+      hasScroll:false,
+      connected:false,
+      user:""
     }
   },
   methods: {
@@ -66,17 +69,6 @@ export default {
       } else {
         this.hasScroll=false;
       }
-    },
-    getUser() {
-      fetch('http://127.0.0.1:8000/api/users', {
-        method: 'GET'
-      })
-      .then(response => response.json())
-      .then(data => {
-        this.User = data['hydra:member']
-        console.log(data);
-        
-      })
     }
   },
   mounted: function(){
@@ -84,6 +76,10 @@ export default {
     window.addEventListener('scroll', function(){
       this.checkScroll();
     }.bind(this))
+
+    if (localStorage.getItem("xenosUserData")) {
+      this.connected=true
+    }
   }
 }
 

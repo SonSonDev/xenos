@@ -11,7 +11,6 @@
                 <th>Id</th>
                 <th>Day</th>
                 <th>Hour</th>
-                <th>EndHour</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,7 +20,6 @@
                 <td>{{ booking.id }}</td>
                 <td>{{ booking.day ? booking.day|date('Y-m-d') : '' }}</td>
                 <td>{{ booking.hour ? booking.hour|date('H:i:s') : '' }}</td>
-                <td>{{ booking.endHour ? booking.endHour|date('H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
                     <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>

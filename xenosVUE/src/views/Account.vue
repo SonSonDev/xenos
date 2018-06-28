@@ -46,7 +46,9 @@ export default {
           }
         })
       } else {
-        this.$router.push('/account/signin')
+        if(!location.href.includes('/account/signin') && !location.href.includes('/account/signup')){
+          this.$router.push('/account/signin')
+        }
       }
       
     }

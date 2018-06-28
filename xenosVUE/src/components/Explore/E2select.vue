@@ -1,5 +1,5 @@
 <template>
-  <div class="select">
+  <div class="select" v-if="planet">
     <!-- {{zones}} -->
     <div class="planet"
       :style="{ 'background': `linear-gradient(to top right, ${planet.colorStart}, ${planet.colorEnd})` }"

@@ -14,7 +14,7 @@
     </div>
 
     <transition name="slide-right">
-      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/ok`">
+      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/confirm`">
         <button
           @click="$emit('selectedTime', {date: date, hour: hour})"
         >Next</button>

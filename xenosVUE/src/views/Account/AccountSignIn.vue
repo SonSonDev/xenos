@@ -65,9 +65,9 @@ export default {
           if (data[i].email===this.form.email && data[i].password===this.form.password) {
             
             localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-            console.log(JSON.stringify(data[i]));
             
-            location.href = '/account';
+              this.$router.push('/account/dashboard')
+
 
             return;
           }

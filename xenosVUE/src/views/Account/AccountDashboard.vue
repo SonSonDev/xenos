@@ -1,7 +1,7 @@
 <template>
   <section class="account_dashboard">
     <h3 class="account_dashboard-title">Hello <span class="gradientText">{{userData.firstname}} {{userData.lastname}}</span> !</h3>
-    <p>{{userData}}</p>
+    
 
 <div class="container">
   <div class="account_dashboard-containerItem">

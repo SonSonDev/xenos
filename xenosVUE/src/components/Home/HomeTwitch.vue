@@ -2,9 +2,9 @@
   <section class="home_twitch">
     <div class="container">
       <h3 class="home_twitch-title">Cannot wait ? Follow the adventure on Twitch.</h3>
+    </div>
       <iframe class="home_twitch-player" src="https://player.twitch.tv/?channel=nasa" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe><a href="https://www.twitch.tv/nasa?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
       
-    </div>
   </section>
 </template>
 

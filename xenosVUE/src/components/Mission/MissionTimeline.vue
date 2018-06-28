@@ -18,10 +18,12 @@
           <div class="mission_timeline-item-info">
             <h1 class="mission_timeline-item-info-date">{{item.date}}</h1>
             <h4 class="mission_timeline-item-info-title">{{item.title}}</h4>
-            <p v-for="(text, indexx) in item.text" :key="indexx" class="mission_timeline-item-info-text">{{text}}</p>
+            <p v-for="(text, indexx) in item.description" :key="indexx" class="mission_timeline-item-info-text">{{text}}</p>
+            <p class="mission_timeline-item-info-bgdate">{{item.date}}</p>
+
           </div>
           <div class="mission_timeline-item-imgContainer">
-            <img class="mission_timeline-item-img" src="" alt="">
+            <img class="mission_timeline-item-img" :src="item.img" alt="">
           </div>
         </div>
       </div>
@@ -35,6 +37,15 @@
 
 <script>
 import OrangeButton from "@/components/OrangeButton.vue";
+import image1 from "@/assets//img/img-mission01.png"
+import image2 from "@/assets//img/img-mission02.png"
+import image3 from "@/assets//img/img-mission03.png"
+import image4 from "@/assets//img/img-mission04.png"
+import image5 from "@/assets//img/img-mission05.png"
+import image6 from "@/assets//img/img-mission06.png"
+
+
+
 
 export default {
   name:"MissionTimeline",
@@ -43,28 +54,40 @@ export default {
     return {
       timeline: [
         {
-          date: "1973",
-          title: "A new way to explore",
-          text: ["Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.",
-          "For the first time in history, everyone will be able to help them in this tremendous task by driving a remote rover."]
+          date: "1610",
+          title: "First telescopic observation of the night sky",
+          img: image1,
+          description: ["Galileo sparked the birth of modern astronomy with his observations of the Moon, phases of Venus, moons around Jupiter, sunspots, and the news that seemingly countless individual stars make up the Milky Way Galaxy.","Galileo's discoveries about the Moon, Jupiter's moons, Venus, and sunspots supported the idea that the Sun - not the Earth - was the center of the Universe, as was commonly believed at the time."]
         },
         {
-          date: "1973",
-          title: "A new way to explore",
-          text: ["Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.",
-          "For the first time in history, everyone will be able to help them in this tremendous task by driving a remote rover."]
+          date: "1957",
+          title: "First artificial satellite",
+          img: image2,
+          description: ["Sputnik 1 was the first artificial Earth satellite. The Soviet Union launched it into an elliptical low Earth orbit on 4 October 1957, orbiting for three weeks before its batteries died, then silently for two more months before falling back into the atmosphere."]
         },
         {
-          date: "1973",
-          title: "A new way to explore",
-          text: ["Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.",
-          "For the first time in history, everyone will be able to help them in this tremendous task by driving a remote rover."]
+          date: "1962",
+          title: "Orbital solar observatory",
+          img: image3,
+          description: ["The first in a series of 8 successfully launched Orbiting Solar Observatories (OSO 1) was launched on 7 March 1962. The 200 kg spacecraft had a 9-sided spinning wheel section 1.2 m in diameter joined onto a fan- shaped sail section.","It was put into a roughly circular orbit at ~ 575 km altitude, 32.8 degrees inclination. It s primary mission objectives were to measure the solar electromagnetic radiation in the UV, X-ray, and gamma-ray regions. Secondarily, it was to investigate dust particle in space."]
         },
         {
-          date: "1973",
-          title: "A new way to explore",
-          text: ["Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.",
-          "For the first time in history, everyone will be able to help them in this tremendous task by driving a remote rover."]
+          date: "1970",
+          title: "First lunar rover",
+          img: image4,
+          description: ["On November 17, 1970 the Soviet Luna 17 spacecraft landed the first roving remote-controlled robot on the Moon. Known as Lunokhod 1, it weighed just under 2,000 pounds and was designed to operate for 90 days while guided by a 5-person team on planet Earth at the Deep Space Center near Moscow, USSR. Lunokhod 1 actually toured the lunar Mare Imbrium (Sea of Rains) for 11 months in one of the greatest successes of the Soviet lunar exploration program."]
+        },
+        {
+          date: "1997",
+          title: "Operational rover on another planet",
+          img: image5,
+          description: ["Pathfinder was the first NASA mission to reach Mars successfully since the twin Viking 1 and Viking 2 landers/orbiters in the mid-1970s, and its success helped pave the way for a robotic Red Planet invasion. In the two decades since, eight other NASA robots have reached Mars, and five of them remain active today. "]
+        },
+        {
+          date: "2025",
+          title: "The launching of Christa",
+          img: image6,
+          description: ["Christa, named after Christa McAuliffe, the first civilian selected to go into space, is our revolutionary all terrain rover. Its unique spherical wheel design allows it to effortlessly roll on every surface, and is able to withstand extreme weather conditions. "]
         }
       ]
     }
@@ -126,27 +149,53 @@ export default {
         }
       }
       &-info {
+        position: relative;
         @media (min-width: 768px){
           max-width: 40%;
         }
         &-date {
+          position: relative;
+          z-index:1;
           margin-bottom: 5px;
         }
         &-title {
+          position: relative;
+          z-index:1;
           line-height: 29px;
           margin-bottom: 20px;
         }
         &-text {
+          position: relative;
+          z-index:1;
           margin-bottom: 20px;
         }
+        &-bgdate {
+          font-family: var(--font-bold);
+          font-size: 23vw;
+          color: #2B2B2B;
+          position: absolute;
+          z-index: 0;
+          top:40px;
+          left:0;
+          @media (min-width: 768px) {
+            font-size:18vw;
+            top:50%;
+            transform: translateY(-50%);
+          }
+        }
       }
-      &-imgContainer{
-        height: 150px;
+      &-img {
+        object-fit: cover;
+        transform: scale(1.05);
         width: 100%;
-        background-color: grey;
-        @media (min-width: 768px){
-          max-width: 40%;
-          height:100%;
+        height: 100%;
+        &Container{
+          
+          background-color: grey;
+          @media (min-width: 768px){
+            max-width: 40%;
+            
+          }
         }
       }
       &-line {
@@ -156,6 +205,7 @@ export default {
           position: absolute;
           left:50%;
           height:100%;
+          z-index: 2;
           border-left: 1px dashed var(--main-dark-white);
         }
 
@@ -173,7 +223,7 @@ export default {
       }
       &-circle {
         position:relative;
-        z-index:1;
+        z-index:10;
         @media (min-width: 768px) {
           position: absolute;
           left: 50%;

@@ -6,9 +6,9 @@
    </div>
    <div class="mission_banner-quote">
        <h5 class="mission_banner-quoteText">
-           “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  (citation stylée de quelqu’un stylé)”
+           “Exploration is in our nature. We began as wanderers, and we are wanderers still. We have lingered long enough on the shores of the cosmic ocean. We are ready at last to set sail for the stars.”
         </h5>
-       <p class="mission_banner-quoteAuthor">- Quelqu’un de stylé</p>
+       <p class="mission_banner-quoteAuthor">- Carl Sagan</p>
    </div>
   </section>
 </template>

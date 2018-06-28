@@ -63,9 +63,9 @@ body {
 }
 #app {
   @media (min-width: 768px) { 
-      
   }
-
+    //   max-width: 100vw;
+    // overflow-x:hidden;
   height: 100%;
 }
 

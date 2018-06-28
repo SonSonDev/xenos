@@ -151,7 +151,7 @@ export default {
 <style lang="scss" scoped>
   
   .home_ourMission {
-    padding-top: 105px;
+    padding-top: 140px;
 
     @media(min-width:768px) {
       display:flex;
@@ -164,18 +164,18 @@ export default {
       }
       &-onTitle {
         text-transform : uppercase;
-        color: var(--main-grey-color);
+        color: var(--main-grey);
 
       }
       &-title {
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
 
       }
       &-text {
         line-height: 22px;
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
       }
     }
 
@@ -203,6 +203,7 @@ export default {
           max-width:95%;
           display:none;
           @media (min-width:768px) {
+          margin-top: 60px;
             display:block;
           }
         }
@@ -218,6 +219,7 @@ export default {
         padding-bottom:83px;
 
         @media (min-width:768px) {
+        margin-top: 80px;
           width:60vw;
         }
       

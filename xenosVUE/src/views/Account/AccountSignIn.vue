@@ -6,9 +6,9 @@
         <h1 class="account_signIn-title">Login</h1>
         <h4 class="account_signIn-subTitle gradientText">To your dashboard</h4>
         <label class="account_signIn-label" for="">Email</label>
-        <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" type="text" v-model="form.email">
+        <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" ref="email" type="text" v-model="form.email" :class="{error : form.error}">
         <label class="account_signIn-label" for="">Password</label>
-        <input class="account_signIn-input" placeholder="6+ characters" type="text" v-model="form.password">
+        <input class="account_signIn-input" placeholder="6+ characters" type="password" v-model="form.password" :class="{error : form.error}">
         
         <div class="account_signIn-checkboxContainer">
           <input class="account_signIn-checkbox" type="checkbox" name="termcondition" id="termcondition" v-model="form.checkbox">
@@ -36,8 +36,10 @@ export default {
     return {
       form: {
         email:"",
-        password:""
+        password:"",
+        error:false
       }
+
     }
   },
   methods:{
@@ -49,6 +51,13 @@ export default {
       .then(data => {
         return data['hydra:member'];
       })
+    },
+    error: function(){
+      this.form.email=""
+      this.form.password=""
+      this.form.error=true;
+      this.$refs.email.focus()
+
     },
     connection(){
       this.getUserList().then(data => {
@@ -63,8 +72,9 @@ export default {
             return;
           }
         }
-       
+        this.error();
         localStorage.removeItem("xenosUserData")
+
       })
     }
   }
@@ -113,7 +123,11 @@ export default {
     margin-bottom: 20px;
     box-sizing: border-box;
     color: var(--main-white);
+    outline: none;
 
+    &.error {
+      border: 1px solid rgb(204, 56, 56);
+    }
     &::placeholder {
       color: #7F7F7F;
       // color: var(--main-grey);

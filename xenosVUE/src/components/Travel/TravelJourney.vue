@@ -1,6 +1,7 @@
 
 <template>
     <section class="travel_journey">
+        <div class="travel_journey-background"></div>
         <div class="travel_journey-container"> 
             <h4 class="travel_journey-h4">The Journey of Christa</h4>
             <p class="travel_journey-p">Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.</p>
@@ -26,12 +27,22 @@ export default {
     padding: 40px;
     line-height: 1.5;
     @media(min-width: 768px){
-            align-items: flex-end;
-            margin-right: 14vw;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-right: 12vw;
         }
     &-container{
         @media(min-width: 768px){
             max-width: 345px;
+        }
+    }
+    &-background{
+        background-image: url(../../assets/img/bg-rover-image.svg);
+        @media(min-width: 768px){
+            position: absolute;
+            left: 0;
+            height: 75vh;
+            width: 65vw;
         }
     }
     &-h4{

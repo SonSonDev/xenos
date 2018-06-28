@@ -24,13 +24,13 @@ export default {
       })
     },
     checkConnection: function(){
-      
       if (localStorage.getItem("xenosUserData")) {
         var localData = JSON.parse(localStorage.getItem("xenosUserData"));
   
         this.getUser().then(function(data){
           for (var i = 0; i < data.length; i++) {
-            if (data[i].email===localData.email && data[i].password===localData.password) {  
+            if (data[i].email===localData.email && data[i].password===localData.password) {
+              localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
               if (!location.href.includes('/account/dashboard')) {
                 this.$router.push('/account/dashboard')
               }

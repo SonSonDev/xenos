@@ -19,9 +19,9 @@
         <label class="account_signUp-label" for="">Email</label>
         <input class="account_signUp-input" v-model="form.email" placeholder="carl.sagan@cosmos.com" type="text">
         <label class="account_signUp-label" for="">Password</label>
-        <input class="account_signUp-input" v-model="form.password" type="password" placeholder="6+ characters">
+        <input class="account_signUp-input" v-model="form.password" type="password" placeholder="6+ characters" ref="password1" :class="{error:form.error}">
         <label class="account_signUp-label" for="">Confirm Password</label>
-        <input class="account_signUp-input" v-model="form.cpassword" type="password" placeholder="6+ characters">
+        <input class="account_signUp-input" v-model="form.cpassword" type="password" placeholder="6+ characters" :class="{error:form.error}">
 
         <div class="account_signUp-checkboxContainer">
           <input class="account_signUp-checkbox" type="checkbox" name="termcondition" id="termcondition" v-model="form.checkbox">
@@ -53,7 +53,8 @@ export default {
         email:"",
         password:"",
         cpassword:"",
-        checkbox:false
+        checkbox:false,
+        error:false
       }
     }
   },
@@ -98,11 +99,13 @@ export default {
       }.bind(this))
     },
     signUp(){
-      if (this.form.password !== this.form.cpassword || this.form.checkbox) {
+      if (this.form.password !== this.form.cpassword || !this.form.checkbox || this.form.firstname ==="" || this.form.lastname==="" || this.form.email==="") {
         console.log("tu t'es trompé!");
         this.form.password="";
         this.form.cpassword=""
         this.form.checkbox=false
+        this.$refs.password1.focus()
+        this.form.error=true
       } else {
         this.addUser()
         window.location.href = "/account"
@@ -167,21 +170,27 @@ export default {
   &-label {
     color:var(--main-white);    
   }
+
   &-input {
     padding: 10px 8px;
     border-radius: 4px;
     border: none;
     margin-top: 8px;
-    background: var(--secondary-dark);
+    background-color: var(--secondary-dark);
     margin-bottom: 20px;
     box-sizing: border-box;
     color: var(--main-white);
+    outline: none;
 
+    &.error {
+      border: 1px solid rgb(204, 56, 56);
+    }
     &::placeholder {
       color: #7F7F7F;
       // color: var(--main-grey);
     }
   }
+
   &-checkbox {
     width: 20px;
     height: 20px;

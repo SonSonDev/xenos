@@ -19,7 +19,7 @@
           <input type="submit" class="button" value="Log in">
         </div>
 
-        <p class="account_signIn-signUpLink-text">Don’t have an account ? <router-link class="account_signIn-signUpLink gradientText" to="/account/signup">Sign up</router-link></p>
+        <p class="account_signIn-signUpLink-text">Don’t have an account ? &nbsp;<router-link class="account_signIn-signUpLink gradientText" to="/account/signup">Sign up</router-link></p>
 
       </form>
     </div>

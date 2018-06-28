@@ -48,7 +48,7 @@ export default {
 
   .home_explore {
     margin-top:80px;
-
+    margin-bottom: 60px;
     @media(min-width: 768px){
       margin-top:120px;
       display: flex;

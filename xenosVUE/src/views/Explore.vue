@@ -6,8 +6,12 @@
       <E0header/>
       <transition name="slide-right">
         <router-view
-        @nextStep="log"
-        :prevChoice="save"
+        @selectedPlanet="updatePlanet"
+        @selectedZone="updateZone"
+        @selectedTime="updateTime"
+        :planet="planet"
+        :zone="zone"
+        :time="time"
         class="child-view"></router-view>
       </transition>
     </div>
@@ -23,11 +27,22 @@ export default {
   components: { Header, E0header },
   data: function () {
     return {
-      save: '',
-      current: 0
+      planet: null,
+      zone: null,
+      time: null,
+      step: 0
     }
   },
   methods: {
+    updatePlanet: function (planet) {
+      this.planet = planet
+    },
+    updateZone: function (zone) {
+      this.zone = zone
+    },
+    updateTime: function (time) {
+      this.time = time
+    },
     log: function (data) {
       this.save = data
       this.current += 1

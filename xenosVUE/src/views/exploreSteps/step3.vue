@@ -1,11 +1,25 @@
 <template>
   <div class="step3">
 
-    <E3date
-      :zone="prevChoice"
-    />
-    <E3hour />
+    <h4 class="instruction">Select a date then a slot :</h4>
+    <div class="selection">
+      <E3date
+        :zone="zone"
+        @selected="updateDate"
+      />
+      <E3hour
+        v-if="date"
+        @selected="updateHour"
+      />
+    </div>
 
+    <transition name="slide-right">
+      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/ok`">
+        <button
+          @click="$emit('selectedTime', {date: date, hour: hour})"
+        >Next</button>
+      </router-link>
+    </transition>
 
   </div>
 </template>
@@ -18,17 +32,23 @@ import E3hour from "@/components/Explore/E3hour.vue"
 export default {
   name: 'explore',
   components: { E3main, E3date, E3hour },
-  props: ['prevChoice'],
+  props: ['zone'],
   data: function() {
     return {
-
+      date: null,
+      hour: null
     }
   },
   created: function () {
 
   },
   methods: {
-
+    updateDate: function (date) {
+      this.date = date
+    },
+    updateHour: function (hour) {
+      this.hour = hour
+    }
   }
 }
 
@@ -36,16 +56,37 @@ export default {
 
 <style lang="scss" scoped>
 .step3 {
+  color: var(--main-dark-white);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // height: 100%;
+  height: 100%;
   padding-top: 20px;
   padding-bottom: 70px;
   @media (min-width: 768px) {
-    flex-direction: row-reverse;
     padding-top: 80px;
+    justify-content: flex-start;
+  }
+  .instruction {
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  .selection {
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+  button {
+    margin: 0px auto 0;
+    display: block;
+    text-decoration: none;
+    @media (min-width: 768px) {
+      align-self: flex-start;
+    }
   }
 }
 </style>

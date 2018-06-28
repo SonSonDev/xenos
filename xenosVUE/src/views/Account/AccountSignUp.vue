@@ -108,7 +108,7 @@ export default {
         this.form.error=true
       } else {
         this.addUser()
-        window.location.href = "/account"
+            this.$router.push('/account/signin')
       }
     }
   },

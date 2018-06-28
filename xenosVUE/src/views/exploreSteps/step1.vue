@@ -1,7 +1,7 @@
 <template>
   <div class="truc" v-if="planets.length">
     <E1main 
-    @nextStep="$emit('nextStep', planets[current])"
+    @nextStep="$emit('selectedPlanet', planets[current])"
     :planet="planets[current]"/>
 
     <E1slider
@@ -49,11 +49,6 @@ export default {
     prevPlanet: function () {
       this.turn = this.current<3 ? this.turn : this.turn+1
       this.current = this.current<3 ? this.current+1 : 0
-    },
-    emit: function () {
-      console.log('ok');
-      
-      $emit('nextStep', planets[current]['@id'])
     }
   }
 }

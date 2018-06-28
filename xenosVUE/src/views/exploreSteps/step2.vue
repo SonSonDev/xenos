@@ -11,7 +11,7 @@
       @select="onSelect"
     />
     <E2main
-      @nextStep="$emit('nextStep', zones[current])"
+      @nextStep="$emit('selectedZone', zones[current])"
       v-if="current !== null"
       :zone="zones[current]"
     />
@@ -27,7 +27,7 @@ import E2select from "@/components/Explore/E2select.vue"
 export default {
   name: 'explore',
   components: { E2main, E2select },
-  props: ['prevChoice'],
+  props: ['planet'],
   data: function() {
     return {
       zones: [],
@@ -36,7 +36,7 @@ export default {
     }
   },
   created: function () {
-    this.choice = this.prevChoice['@type']==='Planet' && this.prevChoice
+    this.choice = this.planet
     if (!this.choice) {
       fetch(this.$baseUrl + '/api/planets', {method: 'GET'})
       .then(response => response.json())

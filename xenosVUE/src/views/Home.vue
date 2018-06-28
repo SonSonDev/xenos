@@ -35,6 +35,7 @@ export default {
 
   .home {
     background-color: white;
+    background-image: url(../assets/img/bg-pattern01.svg);
     position: absolute;
     top:0;
     width: 100%;

@@ -1,9 +1,7 @@
 <template>
   <div id="app">
 
-    <transition name="fade">
-      <router-view/>
-    </transition>
+    <router-view/>
     
   </div>
 </template>
@@ -173,11 +171,6 @@ button, .button {
   position: relative;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 1s ease;
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
+
 
 </style>

@@ -1,14 +1,13 @@
 <template>
   <div class="select">
     <div class="date">
-      <h3 class="title">Date</h3>
+      <h4 class="title">Date</h4>
       <div class="choicesBox">
-        <h5 class="choice">20/01/2024</h5>
-        <h5 class="choice">22/01/2024</h5>
-        <h5 class="choice">23/01/2024</h5>
-        <h5 class="choice">24/01/2024</h5>
-        <h5 class="choice">25/01/2024</h5>
-        <h5 class="choice">26/01/2024</h5>
+        <h5 class="choice"
+        v-for="(date, i) in dates" :key="i"
+        :class="{active: i===selected}"
+        @click="onSelect(i)"
+        >{{`${date[0]} / ${date[1]} / ${date[2]}`}}</h5>
       </div>
     </div>
   </div>
@@ -16,8 +15,27 @@
 
 <script>
 export default {
-  name: 'E3select',
-  props: ['zone']
+  name: 'E3date',
+  props: ['zone'],
+  data: function () {
+    return {
+      selected: null,
+      dates: [
+        [20, 11, 2024],
+        [21, 11, 2024],
+        [22, 11, 2024],
+        [23, 11, 2024],
+        [24, 11, 2024],
+        [25, 11, 2024],
+      ]
+    }
+  },
+  methods: {
+    onSelect: function (i) {
+      this.selected = i
+      this.$emit('selected', this.dates[this.selected])
+    }
+  }
 }
 </script>
 
@@ -29,16 +47,24 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (min-width: 768px) {
+    padding: 0;
+  }
   .date {
     width: 100%;
     display: flex;
     flex-direction: column;
     max-width: 250px;
+    @media (min-width: 768px) {
+      width: 20vw;
+    }
     .title {
       padding: 10px;
       border-bottom: 1px solid var(--main-orange);
     }
     .choicesBox {
+      height: 20vh;
+      overflow: auto;
       .choice {
         padding: 10px;
         border-bottom: 1px dashed var(--secondary-dark);
@@ -48,6 +74,10 @@ export default {
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+        }
+        &.active {
+          color: var(--main-orange);
+          background-color: var(--secondary-dark);
         }
       }
     }

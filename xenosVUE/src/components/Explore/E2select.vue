@@ -9,7 +9,7 @@
         v-if="zone"
       >
         <h3 class="name">{{zone.name}}</h3>
-        <div class="button"
+        <div class="buttonPlus"
           @click="$emit('select', i)"
         >+</div>
       </div>
@@ -56,7 +56,7 @@ export default {
         top: 70%;
         left: 20%;
       }
-      .button {
+      .buttonPlus {
         margin-top: 10px;
         cursor: pointer;
         font-family: var(--font-bold);

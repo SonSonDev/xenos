@@ -37,5 +37,8 @@ export default {
         background-size: cover;
         background-position: center;
     }
+    &-img{
+        transform: rotate(-5deg);
+    }
 }
 </style>

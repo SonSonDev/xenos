@@ -40,7 +40,7 @@ export default {
     top:0;
     width: 100%;
     --header-color: var(--main-dark-white);
-    --header-item-color:var(--main-dark-color);
+    --header-item-color:var(--main-dark);
     @media(min-width:768px){
       --header-item-color: #ffffff;
     }

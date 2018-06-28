@@ -66,16 +66,16 @@ export default {
       &-onTitle {
         margin-bottom:2px;
         text-transform : uppercase;
-        color: var(--main-grey-color);
+        color: var(--main-grey);
       }
       &-title {
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
       }
       &-text {
         line-height: 22px;
         margin-bottom: 20px;
-        color: var(--main-dark-color);
+        color: var(--main-dark);
       }
     }
     &-img {

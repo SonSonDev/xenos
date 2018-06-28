@@ -49,8 +49,8 @@ export default {
   --gradient-from: #FF5F6D;
   --gradient-to: #FFC371;
   --main-orange:#FF966F;
-  --main-dark-color: #333333;
-  --secondary-dark-color: #4F4F4F;
+  --main-dark: #333333;
+  --secondary-dark: #4F4F4F;
   --main-grey: #C8C8C8;
   --main-dark-white: #F8F8F8;
   --main-white: #FFFFFF;
@@ -59,8 +59,8 @@ export default {
 body {
   height: 100vh;
   overflow-x: hidden;
-  background-color: var(--main-dark-color);
-  --header-color:var(--main-dark-color);
+  background-color: var(--main-dark);
+  --header-color:var(--main-dark);
   --header-item-color: #ffffff;
 }
 #app {
@@ -133,7 +133,7 @@ label {
 
 // Button////////////////////////////////
 
-button {
+button, .button {
   font-family: var(--font-bold);
   padding: 12px 32px;
   font-size: 14px;

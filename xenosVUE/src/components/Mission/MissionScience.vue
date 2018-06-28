@@ -2,7 +2,7 @@
   <section class="mission_science">
 
     <div class="container">
-      <h4 class="mission_science-title">Recherche scientifique du cul</h4>
+      <h4 class="mission_science-title">Recherche scientifique</h4>
       <p class="mission_science-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam lacus suspendisse faucibus interdum. Felis donec et odio pellentesque diam volutpat commodo sed. Enim lobortis scelerisque fermentum dui. Purus in massa tempor nec feugiat nisl pretium fusce.</p>
     </div>
 

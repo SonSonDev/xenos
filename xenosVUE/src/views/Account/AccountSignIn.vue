@@ -3,18 +3,24 @@
     
     <div class="container">
       <form class="account_signIn-form" v-on:submit.prevent="connection">
-        <h4 class="account_signIn-title">Sign In</h4>
+        <h1 class="account_signIn-title">Login</h1>
+        <h4 class="account_signIn-subTitle gradientText">To your dashboard</h4>
         <label class="account_signIn-label" for="">Email</label>
         <input class="account_signIn-input" placeholder="carl.sagan@cosmos.com" type="text" v-model="form.email">
         <label class="account_signIn-label" for="">Password</label>
         <input class="account_signIn-input" placeholder="6+ characters" type="text" v-model="form.password">
-        <p class="account_signIn-forgot">Forgot your password</p>
-        <div class="buttonContainer account_signIn-submitButton">
-          <input type="submit" class="button" value="Sign Up">
+        
+        <div class="account_signIn-checkboxContainer">
+          <input class="account_signIn-checkbox" type="checkbox" name="termcondition" id="termcondition" v-model="form.checkbox">
+          <label class="account_signIn-checkbox-label">Keep me signed in</label>
         </div>
-        <router-link class="account_signIn-signInLink" to="account/signup">
-          No account ? Create one.
-        </router-link>
+
+        <div class="buttonContainer account_signIn-submitButton">
+          <input type="submit" class="button" value="Log in">
+        </div>
+
+        <p class="account_signIn-signUpLink-text">Don’t have an account ? <router-link class="account_signIn-signUpLink gradientText" to="/account/signup">Sign up</router-link></p>
+
       </form>
     </div>
   </section>
@@ -35,90 +41,129 @@ export default {
     }
   },
   methods:{
-    connection() {
-      fetch('http://127.0.0.1:8000/api/users', {
+    getUserList() {
+      return fetch('http://127.0.0.1:8000/api/users', {
         method: 'GET'
       })
       .then(response => response.json())
       .then(data => {
-        data['hydra:member'].forEach(element => {
-          if (true) {
-            console.log(this.form.email);
+        return data['hydra:member'];
+      })
+    },
+    connection(){
+      this.getUserList().then(data => {
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].email===this.form.email && data[i].password===this.form.password) {
             
+            localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
+            console.log(JSON.stringify(data[i]));
+            
+            location.href = '/account';
+
+            return;
           }
-        });
+        }
+S        
+        localStorage.removeItem("xenosUserData")
       })
     }
   }
 }
+
 </script>
 
 <style lang="scss" scoped>
 
 .account_signIn {
-  height: 100vh;
   display: flex;
   align-items: center;
-  @media (min-width: 768px){
-    height: inherit;
-    &-form {
-      width: 100%;
-    }
-  }
+  
   &-form {
     display: flex;
     flex-direction: column;
-    height: 434px;
-    border: 1px dashed var(--main-orange);
-    border-radius: 4px;
-    padding:50px 20px 0;
+    margin-top: 40px;
+        
     @media (min-width: 768px) {
-      height: inherit;
-      
+      margin-top: 181px;
+      width: 466px;
     }
   }
   &-title {
     color: var(--main-white);
-    margin-bottom: 50px;
     text-align: center;
     align-self: center;
   }
+  &-subTitle {
+    margin-top: 8px;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+
   &-label {
     color:var(--main-white);
-    margin-top:20px;
-    margin-bottom: 4px;
   }
+  
   &-input {
-    padding: 6px 10px;
+    padding: 10px 8px;
     border-radius: 4px;
     border: none;
+    margin-top: 8px;
+    background-color: var(--secondary-dark);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    color: var(--main-white);
+
     &::placeholder {
-      color: var(--main-grey);
+      color: #7F7F7F;
+      // color: var(--main-grey);
     }
   }
-  &-forgot {
-    color: var(--main-white);
-    text-align: center;
-    font-family: var(--font-bold);
-    margin-bottom: 30px; 
+  
+  &-checkbox {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary-dark);
+    margin-right: 10px;
+    &Container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      justify-content: center;  
+
+    }
+    &-label {
+      text-transform: initial;
+      font-size:14px;
+      line-height: 22px;
+      font-family: var(--font-regular);
+      color: var(--main-white);
+      &Link {
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--main-white);
+        font-family: var(--font-bold);
+      }
+    }
   }
+
   &-submitButton {
     align-self: center;
+    margin-bottom: 20px;
   }
-  &-signInLink {
+  &-signUpLink-text {
     color : var(--main-white);
     align-self: center;
     font-family: var(--font-bold);
     text-decoration: none;
-    margin-top: 10px;
+    
   }
   & .container {
     width: 100%;
     @media(min-width: 768px) {
-      padding:0;
-      margin: 220px auto 0;
-      max-width: 324px;
-      height: 376px;
+      width: inherit;
+      padding: 0;
+      margin: 0 auto;
     }
   }
 }

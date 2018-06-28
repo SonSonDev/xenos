@@ -7,12 +7,17 @@
       <p class="explore_main_content_next_text">
         {{planet.description}}
       </p>
-      <iframe class="explore_main_content_next_video" :src="planet.video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <div class="explore_main_content_next_video">
+        <iframe class="explore_main_content_next_video_iframe" :src="planet.video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
       <transition name="slide-right">
       <router-link
         :to="`/explore/${planet.name}`"
       >
-        <button class="explore_main_content_next_button">Next</button>
+        <button
+          @click="$emit('nextStep')"
+          class="explore_main_content_next_button"
+        >Next</button>
       </router-link>
       </transition>
     </div>
@@ -57,6 +62,8 @@ export default {
         padding: 0 64px;
         text-align: center;
         max-width: 240px;
+        position: relative;
+        z-index: 1;
         @media (min-width: 768px) {
           padding: 0;
           justify-content: flex-start;
@@ -72,15 +79,20 @@ export default {
           display: none;
           @media (min-width: 768px) {
             display: block;
-            width: 100%;
             margin-top: 24px;
-              height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            &_iframe {
+              width: 100%;
+              height: 100%;
+            }
           }
         }
       }
     }
   }
 }
+
 
 </style>
 

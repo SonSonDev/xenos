@@ -28,7 +28,7 @@ export default {
 
 .mission_banner {
     &-awesome{
-        --header-color: var(--main-dark-color);
+        --header-color: var(--main-dark);
         width: 100%;
         height: 450px;
         overflow: hidden;
@@ -54,7 +54,7 @@ export default {
             }
         }
         &Author {
-            color:var(--main-grey-color);
+            color:var(--main-grey);
             text-align: center;
         }
     }

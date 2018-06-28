@@ -60,6 +60,7 @@
   <div class="account_dashboard-containerItem account_dashboard-containerItem-last">
     <div class="account_dashboard-containerItem-infoGathered">
       <h4 class="account_dashboard-containerItem-infoGathered-title">Information Gathered</h4>
+      <p class="account_dashboard-containerItem-infoGathered-text">You have no information gathered yet.</p>
     </div>
 
   </div>
@@ -85,11 +86,7 @@ export default {
       zoneData:[],
       zoneDataName:[],
       planetDataName:[],
-      schedule: [
-        "20/01/2080 - Uranus - 11:00",
-        "20/01/2080 - Uranus - 11:00",
-        "20/01/2080 - Uranus - 11:00"
-      ]
+      schedule: []
     }
   },
   methods: {
@@ -213,10 +210,10 @@ export default {
 
 
 .account_dashboard {
-  margin-top: 58px;
+  padding-top: 58px;
 
   @media(min-width: 768px){
-    margin-top: 200px;
+    padding-top: 200px;
 
     & .container {
       padding: 0;
@@ -245,7 +242,7 @@ export default {
       color: var(--main-white);
       background-color: var(--secondary-dark);
       border-radius: 4px;
-      padding:20px 20px 30px;
+      padding: 20px 20px 30px;
       box-sizing: content-box;
       // box-sizing: border-box;
       margin-bottom: 20px;
@@ -364,7 +361,10 @@ export default {
       &-profile, &-scheduled, &-live, &-gallery{
         height: 50%;
         min-height: 210px;
-        padding: 25px 20px 30px;
+      }
+      &-profile, &-scheduled, &-live, &-gallery, &-infoGathered {
+        padding: 25px 25px 30px;
+
       }
       &-last {
         width: 100%;
@@ -395,9 +395,6 @@ export default {
 
     &-containerItem {
       width: 32%;
-      &-profile, &-scheduled, &-live, &-gallery{
-        
-      }
     }
 
     & .container {

@@ -63,7 +63,8 @@ export default {
         for (var i = 0; i < data.length; i++) {
           if (data[i].email===this.form.email && data[i].password===this.form.password) {
             localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-            this.$router.push('/account/dashboard')
+            console.log(JSON.stringify(data[i]));
+            location.href = '/account';
             return;
           }
         }
@@ -81,15 +82,19 @@ export default {
 
 .account_signIn {
   display: flex;
-  align-items: center;
-  
+  // align-items: center;
+  min-height: 100vh;
+  padding-top: 40px;
+
+  @media (min-width: 768px) {
+    padding-top: 181px;
+    
+  }
   &-form {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
         
     @media (min-width: 768px) {
-      margin-top: 181px;
       width: 466px;
     }
   }
@@ -102,7 +107,10 @@ export default {
     margin-top: 8px;
     text-align: center;
     align-self: center;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+    }
   }
 
   &-label {

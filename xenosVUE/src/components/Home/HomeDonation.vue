@@ -40,12 +40,12 @@ export default {
   .home_donation {
     margin-bottom: 160px;
     padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     @media(min-width: 768px){
       margin-top:120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
     }
     &-desc {
       margin-bottom: 40px;
@@ -78,6 +78,7 @@ export default {
           border: 8px var(--main-grey) solid;
           border-radius: 50%;
           position: relative;
+          margin: auto;
           margin-bottom: 30px;
       }
       &-lvl {

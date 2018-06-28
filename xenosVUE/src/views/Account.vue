@@ -31,7 +31,7 @@ export default {
           for (var i = 0; i < data.length; i++) {
             if (data[i].email===localData.email && data[i].password===localData.password) {
               localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-              if (!location.href.includes('/account/dashboard')) {
+              if (!location.href.includes('/account/dashboard') && location.href.includes('/account')) {
                 this.$router.push('/account/dashboard')
               }
               return true;
@@ -46,7 +46,7 @@ export default {
           }
         })
       } else {
-        if(!location.href.includes('/account/signin') && !location.href.includes('/account/signup')){
+        if(!location.href.includes('/account/signin') && !location.href.includes('/account/signup') && location.href.includes('/account')){
           this.$router.push('/account/signin')
         }
       }
@@ -55,7 +55,21 @@ export default {
   },
   mounted: function(){
     this.checkConnection();
+  },
+  updated: function(){
+    this.checkConnection();
   }
 }
 
 </script>
+
+<style lang="scss" scoped>
+  .account {
+    @media (min-width: 768px) {
+      
+    background-image: url("../assets/img/bg-pattern01.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+  }
+</style>

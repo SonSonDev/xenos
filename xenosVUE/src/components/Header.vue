@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{fixed: hasScroll}">
+  <header class="header" :class="{fixed: hasScroll}" v-on:scroll="checkScroll">
     <div class="header-logo-container">
       <img class="header-logo1" src="../assets/img/full-color-white.png" alt="">
       <svg class="header-logo2" width="341" height="340" viewBox="0 0 341 340" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,6 +64,9 @@ export default {
   },
   methods: {
     checkScroll: function(){
+      console.log("hey");
+      console.log(window.pageYOffset);
+      
       if (window.scrollY>40) {
         this.hasScroll=true;
       } else {
@@ -73,8 +76,9 @@ export default {
   },
   mounted: function(){
     this.checkScroll();
-    window.addEventListener('scroll', function(){
+    window.addEventListener('wheel', function(){
       this.checkScroll();
+      
     }.bind(this))
 
     if (localStorage.getItem("xenosUserData")) {
@@ -94,6 +98,7 @@ export default {
   bottom:0;
   left:0;
   right:0;
+  max-width:100vw;
   background-color: var(--header-color);
   z-index:10;
   @media(min-width:768px){

@@ -2,8 +2,8 @@
   <section class="mission_top">
     <h1 class="mission_top-title">Our mission</h1>
     <h4 class="mission_top-subTitle">is your mission</h4>
-    <p class="mission_top-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore quas omnis architecto, nobis tempora in harum corporis. Fugit ullam laudantium, reiciendis, at obcaecati assumenda odio suscipit eos doloremque quasi culpa? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur inventore voluptatibus quod voluptatum sed expedita, quis sint itaque id nemo quisquam similique fugit quidem facere sit eius recusandae totam quibusdam!</p>
-    <p class="mission_top-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum molestiae neque voluptatem rerum in vero itaque debitis soluta ratione quasi quaerat modi officiis sapiente, enim, minima magnam omnis quam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti placeat sunt dolorum non nesciunt molestias aliquid voluptatibus nobis reprehenderit, quas porro nisi saepe nulla laborum iure sed aperiam est repellat.</p>
+    <p class="mission_top-text">Xenos is part of a mission where space exploration will no longer belong to astronauts or scientists, but will now be an accessible experience for millions of people from Earth in a secure way. Seeing beyond the surface, and even helping to collect data will then be attainable for everyone. These data will be collected by the probe itself on the surface of each planet, and controlled by remote explorers.</p>
+    <p class="mission_top-text">We imagine a future in which it's actually all of you; anyone that has access to this immersive technology, libraries, in their schools, in their basements, all being able to participate in the exploration of these new worlds together</p>
   </section>
 </template>
 

@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     getUser() {
-      fetch('http://127.0.0.1:8000/api/users', {
+      fetch('http://127.0.0.1/api/users', {
         method: 'GET'
       })
       .then(response => response.json())
@@ -69,7 +69,7 @@ export default {
       })
     },
     addUser() {
-      fetch('http://127.0.0.1:8000/api/users', {
+      fetch('http://127.0.0.1/api/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -92,7 +92,7 @@ export default {
       })
     },
     deleteUser(id) {
-      fetch('http://127.0.0.1:8000/api/users/'+id, {
+      fetch('http://127.0.0.1/api/users/'+id, {
           method: 'DELETE'
       })
       .then(function() {
@@ -121,9 +121,9 @@ export default {
 <style lang="scss" scoped>
 
 .account_signUp {
-  
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  // align-items: center;
   @media (min-width: 768px){
     & .container {
       max-width:466px;
@@ -161,7 +161,7 @@ export default {
   }
   &-subTitle {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     @media (min-width: 768px) {
       margin-bottom: 40px;
       

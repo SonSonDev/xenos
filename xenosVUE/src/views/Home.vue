@@ -40,6 +40,7 @@ export default {
 <style lang="scss" scoped>
 
   .home {
+    
     background-color: white;
     background-image: url(../assets/img/bg-pattern01.svg);
     position: absolute;

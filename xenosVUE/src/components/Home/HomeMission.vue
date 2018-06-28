@@ -59,7 +59,7 @@
         <div class="container">
           <p class="home_ourMission-timeline-desc-date">{{info[active].date}}</p>
           <h3 class="home_ourMission-timeline-desc-title">{{info[active].title}}</h3>
-          <p class="home_ourMission-timeline-desc-text">{{info[active].description}}</p>
+          <p v-for="(paragraphe, index) in info[active].description" :key="index" class="home_ourMission-timeline-desc-text">{{paragraphe}}</p>
         </div>
         <img src="@/assets/img/1.png" class="home_ourMission-timeline-desc-bg">
 
@@ -100,24 +100,24 @@ export default {
       ],
       info: [
         {
-          date: "1996",
-          title: "Mahel",
-          description: "Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba Futaba"
+          date: "1610",
+          title: "First telescopic observation of the night sky",
+          description: ["Galileo sparked the birth of modern astronomy with his observations of the Moon, phases of Venus, moons around Jupiter, sunspots, and the news that seemingly countless individual stars make up the Milky Way Galaxy.","Galileo's discoveries about the Moon, Jupiter's moons, Venus, and sunspots supported the idea that the Sun - not the Earth - was the center of the Universe, as was commonly believed at the time."]
         },
         {
-          date: "1997",
-          title: "Valentine",
-          description: "Femme à Hommes on te dit. Blablablablablablabla Blablablablablablabla Blablablablablablabla Blablablablablablabla Blablablablablablabla. J'ai envie de regarder un drama coréen. C'est pas du grand cinéma, mais c'est marrant."
+          date: "1957",
+          title: "First artificial satellite",
+          description: ["Sputnik 1 was the first artificial Earth satellite. The Soviet Union launched it into an elliptical low Earth orbit on 4 October 1957, orbiting for three weeks before its batteries died, then silently for two more months before falling back into the atmosphere."]
         },
         {
-          date: "1998",
-          title: "Quentin",
-          description: "Mouais mouais mouais. NBA, Mario Tennis, blablabla. Je joue à des jeux caca."
+          date: "1962",
+          title: "Orbital solar observatory",
+          description: ["The first in a series of 8 successfully launched Orbiting Solar Observatories (OSO 1) was launched on 7 March 1962. The 200 kg spacecraft had a 9-sided spinning wheel section 1.2 m in diameter joined onto a fan- shaped sail section.","It was put into a roughly circular orbit at ~ 575 km altitude, 32.8 degrees inclination. It s primary mission objectives were to measure the solar electromagnetic radiation in the UV, X-ray, and gamma-ray regions. Secondarily, it was to investigate dust particle in space."]
         },
         {
-          date: "2000",
-          title: "Théodore",
-          description: "Tout à l'heure, j'ai fait un prout quand j'ai fait pipi. Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker."
+          date: "1970",
+          title: "First lunar rover",
+          description: ["On November 17, 1970 the Soviet Luna 17 spacecraft landed the first roving remote-controlled robot on the Moon. Known as Lunokhod 1, it weighed just under 2,000 pounds and was designed to operate for 90 days while guided by a 5-person team on planet Earth at the Deep Space Center near Moscow, USSR. Lunokhod 1 actually toured the lunar Mare Imbrium (Sea of Rains) for 11 months in one of the greatest successes of the Soviet lunar exploration program."]
         }
       ],
       active:0,
@@ -252,6 +252,7 @@ export default {
         }
         &-text {
           line-height:22px;
+          margin-bottom:10px;
         }
       }
     }

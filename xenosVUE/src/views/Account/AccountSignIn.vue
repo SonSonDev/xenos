@@ -57,18 +57,13 @@ export default {
       this.form.password=""
       this.form.error=true;
       this.$refs.email.focus()
-
     },
     connection(){
       this.getUserList().then(data => {
         for (var i = 0; i < data.length; i++) {
           if (data[i].email===this.form.email && data[i].password===this.form.password) {
-            
             localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-            
-              this.$router.push('/account/dashboard')
-
-
+            this.$router.push('/account/dashboard')
             return;
           }
         }

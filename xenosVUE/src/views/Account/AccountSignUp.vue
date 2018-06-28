@@ -108,6 +108,7 @@ export default {
         this.form.error=true
       } else {
         this.addUser()
+        this.$router.push('/account/signin')
       }
     }
   },

@@ -21,6 +21,7 @@ export default {
   align-items: center;
   padding: 40px;
   line-height: 1.5;
+  margin-bottom: 40px;
   @media(min-width: 768px){
     padding-top: 180px;
   }

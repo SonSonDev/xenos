@@ -21,7 +21,7 @@ export default {
     align-items: center;
     text-align: center;
     margin-top:80px;
-    margin-bottom: 40px;
+    margin-bottom: 160px;
 
     @media (min-width: 768px) {
       margin-top:120px; 

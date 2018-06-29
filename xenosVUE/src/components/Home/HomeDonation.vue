@@ -10,8 +10,7 @@
             </div>
             <div class="home_donation-desc-overflow"></div>
         </div>
-        <p class="home_donation-desc-text">Christa, named after Christa McAuliffe, the first civilian selected to go into space, is our revolutionary all terrain rover. Its unique spherical wheel design allows it to effortlessly roll on every surface, and is able to withstand extreme weather conditions.</p>
-        <p class="home_donation-desc-text">With its five 8K sensors, you’ll be able to experience a fully immersive 360° journey on the selected planets.</p>
+        <p class="home_donation-desc-text">Here at Xenos, we also need your help to go further in the evolution of our technology.  Donations are still the most effective tool to achieve your dream of exploration in the best way. Although progress is being made, there is still a long way to go.</p>
         <OrangeButton link="#">Donate to help the exploration</OrangeButton>
       </div>
     </div>

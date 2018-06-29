@@ -15,7 +15,7 @@
     <div class="account_dashboard-containerItem-scheduled">
       <h4 class="account_dashboard-containerItem-scheduled-title">Scheduled</h4>
       <p v-for="(item, index) in planetDataName" v-if="index<3" :key="index" class="account_dashboard-containerItem-scheduled-data">
-        {{schedule[index].day}}/{{schedule[index].month}}/{{schedule[index].year}} - {{item}} - {{schedule[index].hour}}:{{schedule[index].minute}}
+        {{schedule[index].day}}/{{schedule[index].month}}/{{schedule[index].year}} - {{item}} - {{zoneDataName[index]}} - {{schedule[index].hour}}:{{schedule[index].minute}}
       </p>
     </div>
   </div>

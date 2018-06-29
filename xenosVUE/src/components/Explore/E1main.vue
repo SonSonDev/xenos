@@ -72,12 +72,17 @@ export default {
         }
         &_text {
           line-height: 1.2;
-
+          @media (min-width: 768px) {
+            line-height: 1.5;
+            width: 80%;
+            align-self: flex-start;
+          }
         }
         &_button {
-          margin-top: 10px;
+          margin-top: 20px;
         }
         &_video {
+          width: 100%;
           display: none;
           @media (min-width: 768px) {
             display: block;

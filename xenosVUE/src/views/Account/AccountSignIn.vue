@@ -17,6 +17,7 @@
 
         <div class="buttonContainer account_signIn-submitButton">
           <input type="submit" class="button" value="Log in">
+          <!-- <button @click="$router.go(-6)">Log inNN</button> -->
         </div>
 
         <p class="account_signIn-signUpLink-text">Don’t have an account ? &nbsp;<router-link class="account_signIn-signUpLink gradientText" to="/account/signup">Sign up</router-link></p>

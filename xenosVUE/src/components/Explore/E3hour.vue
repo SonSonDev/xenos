@@ -1,5 +1,5 @@
 <template>
-  <div class="select">
+  <div class="select" :class="{active: active}">
     <div class="date">
       <h4 class="title">Hour</h4>
       <div class="choicesBox">
@@ -17,7 +17,7 @@
 <script>
 export default {
   name: 'E3hour',
-  // props: ['zone']
+  props: ['active'],
   data: function () {
     return {
       selected: null,
@@ -42,12 +42,20 @@ export default {
 
 <style lang="scss" scoped>
 .select {
+  opacity: .3;
+  &.active {
+    opacity: 1;
+  }
   color: var(--main-dark-white);
   padding: 0 64px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
   .date {
     width: 100%;
     display: flex;

@@ -4,6 +4,8 @@ import router from './router'
 
 
 Vue.config.productionTip = false
+var VueTouch = require('vue-touch')
+Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.prototype.$baseUrl = 'http://127.0.0.1:8000'
 

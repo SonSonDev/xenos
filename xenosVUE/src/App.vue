@@ -158,6 +158,12 @@ button, .button {
   &:focus {
     outline: none;
   }
+  &:disabled {
+    color: var(--main-grey);
+    background: var(--secondary-dark) !important;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
 
   &Container {
     width:min-content;

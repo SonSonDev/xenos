@@ -35,7 +35,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-image: url("https://i.pinimg.com/originals/bc/7e/90/bc7e902dd2c12a88f9ccb9bb628758cf.jpg");
+        background-image: url("../../assets/img/rover-banner.jpeg");
         margin-bottom: 40px;
         background-size: cover;
         background-position: center;

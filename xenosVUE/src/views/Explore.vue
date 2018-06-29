@@ -1,6 +1,6 @@
 <template>
 
-  <div class="explore" :class="{scrollEnabled : current === 3}">
+  <div class="explore" :class="{scrollEnabled : current!==0}">
     <Header/>
     <div class="explore_main">
       <E0header
@@ -103,6 +103,7 @@ export default {
 }
 .child-view {
   transition: all .5s cubic-bezier(.55,0,.1,1);
+  overflow-x: hidden;
 }
 .slide-left-enter, .slide-right-leave-active {
   opacity: 0;

@@ -147,7 +147,7 @@ export default {
       align-items: center;
       margin-bottom: 20px;
       justify-content: center;  
-
+      padding-bottom: 20px;
     }
     &-label {
       text-transform: initial;

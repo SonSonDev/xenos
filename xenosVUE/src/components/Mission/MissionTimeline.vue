@@ -47,9 +47,6 @@ import image4 from "@/assets//img/img-mission04.png"
 import image5 from "@/assets//img/img-mission05.png"
 import image6 from "@/assets//img/img-mission06.png"
 
-
-
-
 export default {
   name:"MissionTimeline",
   components: {OrangeButton},
@@ -282,7 +279,10 @@ export default {
     }
   }
   .fade {
-    opacity: 0.5;
+    @media (min-width:768px) {
+      opacity: 0.5;
+
+    }
   }
   .focus {
     opacity: 1;

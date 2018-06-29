@@ -33,7 +33,7 @@ export default {
     width: 30vh;
     height: 30vh;
     border-radius: 100%;
-    margin-top: 40px;
+    // margin-top: 40px;
     @media (min-width: 768px) {
       margin-top: 0;
       width: 24vw;

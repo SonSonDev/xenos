@@ -17,6 +17,10 @@ class PlanetType extends AbstractType
             ->add('img')
             ->add('colorStart')
             ->add('colorEnd')
+            ->add('temperature')
+            ->add('gravity')
+            ->add('distance')
+            ->add('radius')
             ->add('video')
         ;
     }

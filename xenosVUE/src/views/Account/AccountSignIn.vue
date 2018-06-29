@@ -44,7 +44,7 @@ export default {
   },
   methods:{
     getUserList() {
-      return fetch('http://127.0.0.1:8000/api/users', {
+      return fetch(this.$baseUrl +'/api/users', {
         method: 'GET'
       })
       .then(response => response.json())
@@ -63,7 +63,6 @@ export default {
         for (var i = 0; i < data.length; i++) {
           if (data[i].email===this.form.email && data[i].password===this.form.password) {
             localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-            
             location.href = '/account';
             return;
           }

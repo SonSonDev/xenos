@@ -38,6 +38,7 @@ export default {
       height: calc(28vh * 1.86);
       position: absolute;
       z-index: 0;
+      transform: translateY(-10px);
       @media(min-width:768px){
         transform: rotate(-90deg);
         right: -22vh;

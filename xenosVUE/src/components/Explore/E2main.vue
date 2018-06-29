@@ -1,23 +1,23 @@
 <template>
   <div class="main">
     <h1 class="title">{{zone.name}}</h1>
-    <p class="description">Uranus is the seventh planet from the Sun. It has the third-largest planetary radius and fourth-largest planetary ...</p>
+    <p class="description">{{zone.description}}</p>
     <div class="infoBox">
       <div class="info">
+        <p class="gradientText">Distance from Earth</p>
+        <h5>{{planet.distance}} km</h5>
+      </div>
+      <div class="info">
         <p class="gradientText">Average temperature</p>
-        <h5>−224 °C</h5>
+        <h5>{{planet.temperature}}°C</h5>
       </div>
       <div class="info">
         <p class="gradientText">Surface gravity</p>
-        <h5>8,87 m/s2</h5>
-      </div>
-      <div class="info">
-        <p class="gradientText">Distance from Earth</p>
-        <h5>3.2 billion km</h5>
+        <h5>{{planet.gravity}} m/s&sup2;</h5>
       </div>
       <div class="info">
         <p class="gradientText">Radius</p>
-        <h5>25 000km</h5>
+        <h5>{{planet.radius}} km</h5>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
 <script>
 export default {
   name: 'E2main',
-  props: ['zone']
+  props: ['zone', 'planet']
 }
 </script>
 

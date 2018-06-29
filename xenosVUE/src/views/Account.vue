@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     getUser: function() {
-      return fetch('http://127.0.0.1:8000/api/users', {
+      return fetch(this.$baseUrl + '/api/users', {
         method: 'GET'
       })
       .then(response => response.json())

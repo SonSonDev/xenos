@@ -14,7 +14,6 @@ class Booking1Type extends AbstractType
         $builder
             ->add('day')
             ->add('hour')
-            ->add('endHour')
             ->add('user_id')
             ->add('zone_id')
         ;

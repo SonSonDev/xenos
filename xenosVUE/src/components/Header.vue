@@ -64,9 +64,6 @@ export default {
   },
   methods: {
     checkScroll: function(){
-      console.log("hey");
-      console.log(window.pageYOffset);
-      
       if (window.scrollY>40) {
         this.hasScroll=true;
       } else {

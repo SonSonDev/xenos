@@ -8,7 +8,16 @@
 
 <style lang="scss" scoped>
 .step5 {
-  
+  color: var(--main-dark-white);
+  text-align: center;
+  margin-top: 80px;
+  padding: 0 40px;
+  .title {
+  }
+  p {
+    line-height: 1;
+    margin: 20px 0;
+  }
 }
 </style>
 

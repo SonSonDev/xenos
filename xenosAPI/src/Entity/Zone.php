@@ -32,39 +32,20 @@ class Zone
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=200)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=10)
      */
     private $price;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $temperature;
-
-    /**
-     * @ORM\Column(type="float")
-     */
-    private $gravity;
-
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $distance;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Booking", mappedBy="zone_id", orphanRemoval=true)
      */
     private $bookings;
 
-    /**
-     * @ORM\Column(type="string", length=30, nullable=true)
-     */
-    private $radius;
 
     public function __construct()
     {
@@ -124,41 +105,6 @@ class Zone
         return $this;
     }
 
-    public function getTemperature(): ?float
-    {
-        return $this->temperature;
-    }
-
-    public function setTemperature(float $temperature): self
-    {
-        $this->temperature = $temperature;
-
-        return $this;
-    }
-
-    public function getGravity(): ?float
-    {
-        return $this->gravity;
-    }
-
-    public function setGravity(float $gravity): self
-    {
-        $this->gravity = $gravity;
-
-        return $this;
-    }
-
-    public function getDistance(): ?string
-    {
-        return $this->distance;
-    }
-
-    public function setDistance(string $distance): self
-    {
-        $this->distance = $distance;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Booking[]
@@ -196,17 +142,6 @@ class Zone
         return $this->getName();
     }
 
-    public function getRadius(): ?string
-    {
-        return $this->radius;
-    }
-
-    public function setRadius(?string $radius): self
-    {
-        $this->radius = $radius;
-
-        return $this;
-    }
     
     
 }

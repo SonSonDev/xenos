@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="two">
+    <!-- <div class="two">
       <h5 class="title">2. Card details</h5>
       <label class="card">Card n°</label>
       <input type="text" class="card">
@@ -30,14 +30,30 @@
       <input type="text" class="expire">
       <label class="cvv">Cvv</label>
       <input type="text" class="cvv">
-    </div>
+    </div> -->
+
+    <transition name="slide-right">
+      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/done`">
+        <button
+          @click="$emit('nextStep')"
+        >Confirm</button>
+      </router-link>
+    </transition>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+export default {
+  name: 'E4payment',
+  props: ['planet', 'zone']
+}
+</script>
+
+
+<style lang="scss" scoped>
 .explore {
-  height: auto !important;
-  padding-bottom: 80px;
+  // height: auto !important;
+  // padding-bottom: 80px;
 }
 .payment {
   color: var(--main-dark-white);

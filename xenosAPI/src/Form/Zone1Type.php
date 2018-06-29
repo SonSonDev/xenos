@@ -15,10 +15,6 @@ class Zone1Type extends AbstractType
             ->add('name')
             ->add('description')
             ->add('price')
-            ->add('temperature')
-            ->add('gravity')
-            ->add('distance')
-            ->add('radius')
             ->add('planet')
         ;
     }

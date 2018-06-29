@@ -14,6 +14,7 @@
       @nextStep="$emit('selectedZone', zones[current])"
       v-if="current !== null"
       :zone="zones[current]"
+      :planet="choice"
     />
 
 

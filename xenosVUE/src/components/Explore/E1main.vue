@@ -59,7 +59,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-        padding: 0 64px;
+        // padding: 0 64px;
         text-align: center;
         max-width: 240px;
         position: relative;
@@ -71,9 +71,11 @@ export default {
           text-align: left;
         }
         &_text {
+          line-height: 1.2;
+
         }
         &_button {
-          margin-top: 20px;
+          margin-top: 10px;
         }
         &_video {
           display: none;

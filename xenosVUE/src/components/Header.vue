@@ -64,7 +64,6 @@ export default {
   },
   methods: {
     checkScroll: function(){
-      
       if (window.scrollY>40) {
         this.hasScroll=true;
       } else {

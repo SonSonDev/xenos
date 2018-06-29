@@ -12,10 +12,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Temperature</th>
-                <th>Gravity</th>
-                <th>Distance</th>
-                <th>Radius</th>
+
                 <th>actions</th>
             </tr>
         </thead>
@@ -26,10 +23,7 @@
                 <td>{{ zone.name }}</td>
                 <td>{{ zone.description }}</td>
                 <td>{{ zone.price }}</td>
-                <td>{{ zone.temperature }}</td>
-                <td>{{ zone.gravity }}</td>
-                <td>{{ zone.distance }}</td>
-                <td>{{ zone.radius }}</td>
+
                 <td>
                     <a href="{{ path('zone_show', {'id': zone.id}) }}">show</a>
                     <a href="{{ path('zone_edit', {'id': zone.id}) }}">edit</a>

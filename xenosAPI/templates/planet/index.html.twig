@@ -15,6 +15,10 @@
                 <th>ColorStart</th>
                 <th>ColorEnd</th>
                 <th>Video</th>
+                <th>Temperature</th>
+                <th>Gravity</th>
+                <th>Distance</th>
+                <th>Radius</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -27,6 +31,10 @@
                 <td>{{ planet.img }}</td>
                 <td>{{ planet.colorStart }}</td>
                 <td>{{ planet.colorEnd }}</td>
+                <td>{{ planet.temperature }}</td>
+                <td>{{ planet.gravity }}</td>
+                <td>{{ planet.distance }}</td>
+                <td>{{ planet.radius }}</td>
                 <td>{{ planet.video }}</td>
                 <td>
                     <a href="{{ path('planet_show', {'id': planet.id}) }}">show</a>

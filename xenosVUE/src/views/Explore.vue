@@ -3,12 +3,16 @@
   <div class="explore">
     <Header/>
     <div class="explore_main">
-      <E0header/>
+      <E0header
+        :current="current"
+        v-if="current < 4"
+      />
       <transition name="slide-right">
         <router-view
         @selectedPlanet="updatePlanet"
         @selectedZone="updateZone"
         @selectedTime="updateTime"
+        @paid="finalStep"
         :planet="planet"
         :zone="zone"
         :time="time"
@@ -30,8 +34,14 @@ export default {
       planet: null,
       zone: null,
       time: null,
-      step: 0
+      current: 0
     }
+  },
+  created: function () {
+    this.updateCurrentStep()
+  },
+  updated: function () {
+    this.updateCurrentStep()
   },
   methods: {
     updatePlanet: function (planet) {
@@ -43,9 +53,16 @@ export default {
     updateTime: function (time) {
       this.time = time
     },
-    log: function (data) {
-      this.save = data
-      this.current += 1
+    finalStep: function () {
+    },
+    updateCurrentStep() {
+      const path = this.$route.path.split('/')
+      
+      if (path[path.length - 1] !== 'done') {
+        this.current = path.length - 2
+      } else {
+        this.current = 4
+      }
     }
   }
 }

@@ -51,6 +51,26 @@ class Planet
     private $video;
 
     /**
+     * @ORM\Column(type="float")
+     */
+    private $temperature;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $gravity;
+
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $radius;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $distance;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Zone", mappedBy="planet", orphanRemoval=true)
      */
     private $zones;
@@ -171,5 +191,55 @@ class Planet
     public function __toString()
     {
         return $this->getName();
+    }
+
+
+    public function getTemperature(): ?float
+    {
+        return $this->temperature;
+    }
+
+    public function setTemperature(float $temperature): self
+    {
+        $this->temperature = $temperature;
+
+        return $this;
+    }
+
+    public function getGravity(): ?float
+    {
+        return $this->gravity;
+    }
+
+    public function setGravity(float $gravity): self
+    {
+        $this->gravity = $gravity;
+
+        return $this;
+    }
+
+    public function getDistance(): ?string
+    {
+        return $this->distance;
+    }
+
+    public function setDistance(string $distance): self
+    {
+        $this->distance = $distance;
+
+        return $this;
+    }
+
+
+    public function getRadius(): ?string
+    {
+        return $this->radius;
+    }
+
+    public function setRadius(?string $radius): self
+    {
+        $this->radius = $radius;
+
+        return $this;
     }
 }

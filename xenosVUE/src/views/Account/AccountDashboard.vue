@@ -98,7 +98,7 @@ export default {
       location.href = '/account';
     },
     getBookingList: function() {
-      return fetch('http://127.0.0.1:8000/api/bookings', {
+      return fetch(this.$baseUrl + '/api/bookings', {
         method: 'GET'
       })
       .then(response => response.json())
@@ -107,7 +107,7 @@ export default {
       })
     },
     getZoneList: function() {
-      return fetch('http://127.0.0.1:8000/api/zones', {
+      return fetch(this.$baseUrl +'/api/zones', {
         method: 'GET'
       })
       .then(response => response.json())
@@ -116,7 +116,7 @@ export default {
       })
     },
     getPlanetList: function() {
-      return fetch('http://127.0.0.1:8000/api/planets', {
+      return fetch(this.$baseUrl +'/api/planets', {
         method: 'GET'
       })
       .then(response => response.json())

@@ -8,16 +8,12 @@
     />
 
     <E4connect v-if="!user"/>
-    <E4payment v-else />
+    <E4payment v-else
+      @nextStep="pay"
+      :planet="planet"
+      :zone="zone" 
+    />
 
-
-    <transition name="slide-right">
-      <router-link :to="`/explore/${$route.params.planet}/${zone.name}/done`">
-        <button
-          @click="pay"
-        >Confirm</button>
-      </router-link>
-    </transition>
   </div>
 </template>
 
@@ -40,6 +36,7 @@ export default {
   },
   methods: {
     pay: function () {
+      this.$emit('paid')
       fetch(this.$baseUrl + '/api/bookings', {
         method: 'POST',
         headers: {

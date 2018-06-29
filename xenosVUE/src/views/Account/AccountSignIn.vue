@@ -63,7 +63,7 @@ export default {
         for (var i = 0; i < data.length; i++) {
           if (data[i].email===this.form.email && data[i].password===this.form.password) {
             localStorage.setItem("xenosUserData", JSON.stringify(data[i]))
-            console.log(JSON.stringify(data[i]));
+            
             location.href = '/account';
             return;
           }

@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     getUser() {
-      fetch('http://127.0.0.1/api/users', {
+      fetch('http://127.0.0.1:8000/api/users', {
         method: 'GET'
       })
       .then(response => response.json())
@@ -69,7 +69,7 @@ export default {
       })
     },
     addUser() {
-      fetch('http://127.0.0.1/api/users', {
+      fetch('http://127.0.0.1:8000/api/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -92,7 +92,7 @@ export default {
       })
     },
     deleteUser(id) {
-      fetch('http://127.0.0.1/api/users/'+id, {
+      fetch('http://127.0.0.1:8000/api/users/'+id, {
           method: 'DELETE'
       })
       .then(function() {

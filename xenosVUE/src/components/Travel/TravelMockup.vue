@@ -5,7 +5,7 @@
         <div class="travel_mockup-awesome">
             <Wave class="travel_mockup-wave" color="#333333" is-top="true"/>
             <div class="travel_mockup-imgContainer">
-                <img class="travel_mockup-img" src="" alt="">
+                <img class="travel_mockup-img" src="@/assets/img/img-rover01.png" alt="">
             </div>
             <Wave class="travel_mockup-wave" color="#333333" />
         </div>
@@ -40,6 +40,16 @@ export default {
         }
         &-h4{
             // max-width: 100px;
+        }
+        &-img {
+            &Container {
+                display: flex;
+                justify-content: center;
+            }
+
+            max-width: 90vw;
+            height: 200px;
+object-fit: contain;            
         }
         &-awesome{
         --header-color: var(--main-dark);

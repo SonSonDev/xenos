@@ -2,10 +2,13 @@
   <section class="mission_timeline">
     <h4 class="mission_timeline-title">It started from an idea...</h4>
     <div class="container">
-      <div v-for="(item, index) in timeline" :key="index" class="mission_timeline-item">
+      <div v-for="(item, index) in timeline" :key="index" class="mission_timeline-item"
+      v-on:mouseover="Hover(index)"
+      v-on:mouseout="disHover"
+      :class="{fade:!isHover(index), focus:isHover(index)}">
         <div class="mission_timeline-item-line" :class="{first : isFirst(index), last : isLast(index)}">
           <svg class="mission_timeline-item-circle" width="40" height="40" viewBox="0 0 40 40" fill="#333333" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="17.5" stroke="url(#paint0_linear)" stroke-width="5"/>
+            <circle cx="20" cy="20" r="17.5" stroke="url(#paint0_linear)" stroke-width="5" v-bind:fill="fillCircle(index)"/>
             <defs>
               <linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-8.23448 18.3224) scale(40) rotate(-41.5997)">
               <stop stop-color="#FF5F6D"/>
@@ -89,7 +92,11 @@ export default {
           img: image6,
           description: ["Christa, named after Christa McAuliffe, the first civilian selected to go into space, is our revolutionary all terrain rover. Its unique spherical wheel design allows it to effortlessly roll on every surface, and is able to withstand extreme weather conditions. "]
         }
-      ]
+      ],
+      hover: {
+        active: false,
+        index: 0
+      }
     }
   },
   methods: {
@@ -101,6 +108,31 @@ export default {
     },
     isLast: function(index){
       return index===this.timeline.length-1;
+    },
+    Hover: function(index){
+      this.hover.active=true;
+      this.hover.index=index;
+    },
+    isHover(index){
+      if (this.hover.active) {
+        if(index===this.hover.index) {
+            return true;
+        } else {
+          return false;
+        }
+      } else {
+        return true;
+      }
+    },
+    fillCircle(index){
+      if(index===this.hover.index && this.hover.active) {
+        return "url(#paint0_linear)";
+      } else {
+        return "none";
+      }
+    },
+    disHover: function(){
+      this.hover.active = false;
     }
   }
 }
@@ -133,6 +165,7 @@ export default {
     }
     &-item {
       display: flex;
+      transition: ease 0.3s opacity;
 
       &-details {
         margin-left: 24px;
@@ -248,4 +281,14 @@ export default {
       }
     }
   }
+  .fade {
+    opacity: 0.5;
+  }
+  .focus {
+    opacity: 1;
+  }
+  circle {
+    transition: fill .4s ease;
+  }
+
 </style>

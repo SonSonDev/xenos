@@ -9,7 +9,7 @@
                 <p class="travel_VR-p">Since the dawn of time, scientists strive to uncover the secrets of the Universe and the planets in it. From discovering the origin of everything to finding new forms of life, their work is essential to push humanity forward.</p>
             </div>
             <div class="travel_VR-imgContainer">
-                <img class="travel_VR-img" src="" alt="">
+                <img class="travel_VR-img" src="@/assets/img/img-rover02.png" alt="">
             </div>
         </div>
     </section>
@@ -50,14 +50,19 @@ export default {
             margin: 0 auto;
         }
     }
-    &-imgContainer{
-        height: 200px;
+    &-img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
-        background-color: grey;
-        margin-top: 5vh;
-        @media (min-width: 768px){
-          max-width: 40%;
-          max-height: 450px;
+        &Container{
+            height: 300px;
+            width: 100%;
+            background-color: grey;
+            margin-top: 5vh;
+            @media (min-width: 768px){
+                max-width: 40%;
+                max-height: 450px;
+            }
         }
     }
     &-p{

@@ -50,11 +50,17 @@ export default {
     max-width: 400px;
   }
   .title {
+    margin-bottom: 20px;
+    @media (max-width: 767px) {
+      margin-bottom: 0;
+      font-size: 24px;
+    }
   }
   .description {
     text-align: center;
-    margin: 20px 0;
+    margin: 10px 0 20px;
     @media (min-width: 768px) {
+      margin-top: 2px;
       text-align: left;
     }
   }

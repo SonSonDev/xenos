@@ -1,0 +1,26 @@
+<svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d)">
+<ellipse cx="19.0902" cy="19.1077" rx="19.0902" ry="19.1077" transform="translate(10 6)" fill="white"/>
+<path d="M35.6803 19.1077C35.6803 28.282 28.2505 35.7153 19.0902 35.7153C9.92983 35.7153 2.5 28.282 2.5 19.1077C2.5 9.93334 9.92983 2.5 19.0902 2.5C28.2505 2.5 35.6803 9.93334 35.6803 19.1077Z" transform="translate(10 6)" stroke="url(#paint0_linear)" stroke-width="5"/>
+</g>
+<path d="M11.508 4.34C11.8253 4.34 11.984 4.49867 11.984 4.816V7.252C11.984 7.56933 11.8253 7.728 11.508 7.728H7.84C7.728 7.728 7.672 7.784 7.672 7.896V11.508C7.672 11.8253 7.51333 11.984 7.196 11.984H4.788C4.47067 11.984 4.312 11.8253 4.312 11.508V7.896C4.312 7.784 4.256 7.728 4.144 7.728H0.476C0.158667 7.728 0 7.56933 0 7.252V4.816C0 4.49867 0.158667 4.34 0.476 4.34H4.144C4.256 4.34 4.312 4.284 4.312 4.172V0.475999C4.312 0.158666 4.47067 0 4.788 0H7.196C7.51333 0 7.672 0.158666 7.672 0.475999V4.172C7.672 4.284 7.728 4.34 7.84 4.34H11.508Z" transform="translate(22.8667 19.6863)" fill="url(#paint1_linear)"/>
+<defs>
+<filter id="filter0_d" x="0" y="0" width="58.1803" height="58.2153" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-7.85987 17.5049) scale(38.1803 38.2153) rotate(-41.5997)">
+<stop stop-color="#FF5F6D"/>
+<stop offset="1" stop-color="#FFC371"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(-2.46705 5.48939) scale(11.984) rotate(-41.5997)">
+<stop stop-color="#FF5F6D"/>
+<stop offset="1" stop-color="#FFC371"/>
+</linearGradient>
+</defs>
+</svg>

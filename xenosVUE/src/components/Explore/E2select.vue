@@ -8,10 +8,8 @@
         v-for="(zone, i) in zones" :key="zone.id"
         v-if="zone"
       >
-        <h3 class="name">{{zone.name}}</h3>
-        <div class="buttonPlus"
-          @click="$emit('select', i)"
-        >+</div>
+        <h4 class="name">{{zone.name}}</h4>
+        <img src="../../assets/img/zone-button.png" alt="" @click="$emit('select', i)">
       </div>
     
     </div>
@@ -27,6 +25,7 @@ export default {
 
 <style lang="scss" scoped>
 .select {
+  color: white;
   display: flex;
   justify-content: center;
   .planet {
@@ -34,7 +33,9 @@ export default {
     width: 30vh;
     height: 30vh;
     border-radius: 100%;
+    margin-top: 40px;
     @media (min-width: 768px) {
+      margin-top: 0;
       width: 24vw;
       height: 24vw;
       margin-right: 120px;
@@ -44,17 +45,27 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      h4 {
+        font-size: 18px;
+        @media (max-width: 767px) {
+          text-align: center;
+        }
+      }
+      img {
+        margin-top: 5px;
+        width: 50px;
+      }
       &:nth-child(1) {
-        top: 10%;
-        left: 20%;
+        top: 5%;
+        left: 0%;
       }
       &:nth-child(2) {
-        top: 40%;
+        top: 25%;
         left: 60%;
       }
       &:nth-child(3) {
         top: 70%;
-        left: 20%;
+        left: 10%;
       }
       .buttonPlus {
         margin-top: 10px;
@@ -68,6 +79,7 @@ export default {
         height: 30px;
         background-color: var(--main-dark-white);
         box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.15);
+        // background-image: url('../../assets/img/zone-button.png');
       }
 
     }

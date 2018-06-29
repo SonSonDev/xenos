@@ -1,8 +1,12 @@
 <template>
-  <div class="truc" v-if="planets.length">
+  <v-touch class="truc" v-if="planets.length"
+    v-on:swipeleft="nextPlanet"
+    v-on:swiperight="prevPlanet">
+
     <E1main 
     @nextStep="$emit('selectedPlanet', planets[current])"
     :planet="planets[current]"/>
+
 
     <E1slider
       :planets="planets"
@@ -12,13 +16,15 @@
       @prevPlanet="prevPlanet"
     />
 
-  </div>
+  </v-touch>
   <div v-else class="else"></div>
 </template>
 
 <script>
 import E1main from "@/components/Explore/E1main.vue"
 import E1slider from "@/components/Explore/E1slider.vue"
+
+
 
 export default {
   components: { E1main, E1slider },

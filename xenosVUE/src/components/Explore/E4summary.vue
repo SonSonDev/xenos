@@ -64,7 +64,7 @@ export default {
       padding: 14px;
       .content {
         display: grid;
-        grid-template-columns: 100px 150px;
+        grid-template-columns: 100px 200px;
         grid-template-rows: 30px 70px;
         justify-items: center;
         align-items: center;

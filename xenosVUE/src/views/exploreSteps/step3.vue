@@ -8,7 +8,7 @@
         @selected="updateDate"
       />
       <E3hour
-        v-if="date"
+        :active="date"
         @selected="updateHour"
       />
     </div>
@@ -17,6 +17,7 @@
       <router-link :to="`/explore/${$route.params.planet}/${zone.name}/confirm`">
         <button
           @click="$emit('selectedTime', {date: date, hour: hour})"
+          :disabled="!date || !hour"
         >Next</button>
       </router-link>
     </transition>
@@ -85,6 +86,15 @@ export default {
     display: block;
     text-decoration: none;
     @media (min-width: 768px) {
+      align-self: flex-start;
+      margin-right: auto;
+    }
+
+  }
+  a {
+    text-decoration: none;
+    @media (min-width: 768px) {
+      margin-top: 30px;
       align-self: flex-start;
     }
   }

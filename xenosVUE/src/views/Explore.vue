@@ -1,13 +1,13 @@
 <template>
 
-  <div class="explore">
+  <div class="explore" :class="{scrollEnabled : current === 3}">
     <Header/>
     <div class="explore_main">
       <E0header
         :current="current"
         v-if="current < 4"
       />
-      <transition name="slide-right">
+      <!-- <transition name="slide-right"> -->
         <router-view
         @selectedPlanet="updatePlanet"
         @selectedZone="updateZone"
@@ -17,7 +17,7 @@
         :zone="zone"
         :time="time"
         class="child-view"></router-view>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>
@@ -56,13 +56,20 @@ export default {
     finalStep: function () {
     },
     updateCurrentStep() {
-      const path = this.$route.path.split('/')
-      
-      if (path[path.length - 1] !== 'done') {
-        this.current = path.length - 2
-      } else {
-        this.current = 4
+      let count = 0
+      count += Object.keys(this.$route.params).length
+      if (this.$route.path.includes('confirm')) {
+        count += 1
+      } else if (this.$route.path.includes('done')) {
+        count += 2
       }
+      
+      // if (path[path.length - 1] !== 'done') {
+      //   this.current = path.length - 2
+      // } else {
+      //   this.current = 4
+      // }
+      this.current = count
     }
   }
 }
@@ -72,7 +79,10 @@ export default {
 
 
 <style lang="scss" scoped>
-
+.explore.scrollEnabled {
+  height: auto;
+  overflow: auto;
+}
 
 .explore {
   height: 100%;

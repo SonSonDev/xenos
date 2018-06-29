@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{fixed: hasScroll}" v-on:scroll="checkScroll">
+  <header class="header" :class="{fixed: hasScroll}">
     <div class="header-logo-container">
       <img class="header-logo1" src="../assets/img/full-color-white.png" alt="">
       <svg class="header-logo2" width="341" height="340" viewBox="0 0 341 340" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@ export default {
   },
   mounted: function(){
     this.checkScroll();
-    window.addEventListener('wheel', function(){
+    window.addEventListener('scroll', function(){
       this.checkScroll();
       
     }.bind(this))

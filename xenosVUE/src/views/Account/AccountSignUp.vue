@@ -61,6 +61,7 @@ export default {
   methods: {
     getUser() {
       fetch(this.$baseUrl +'/api/users', {
+
         method: 'GET'
       })
       .then(response => response.json())
@@ -70,6 +71,7 @@ export default {
     },
     addUser() {
       fetch(this.$baseUrl +'/api/users', {
+
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -93,6 +95,7 @@ export default {
     },
     deleteUser(id) {
       fetch(this.$baseUrl +'/api/users/'+id, {
+
           method: 'DELETE'
       })
       .then(function() {

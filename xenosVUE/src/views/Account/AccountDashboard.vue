@@ -180,7 +180,7 @@ export default {
         
         item.hour=new Date(this.scheduleData[i].hour).getHours()
         if (String(item.hour).length<2) {
-          item.hour="0"+item.hour
+          item.hour="0"+item.hour-1
         }
         item.minute=new Date(this.scheduleData[i].hour).getMinutes()
         if (String(item.minute).length<2) {
@@ -188,6 +188,7 @@ export default {
         }
         item.endHour=new Date(this.scheduleData[i].endHour).getHours()
         this.schedule.push(item)
+        
         
       }
             

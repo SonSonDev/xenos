@@ -3,7 +3,7 @@
     <section class="travel_header">
         <h1 class="travel_header-title">Take control</h1>
         <h4 class="travel_header-subTitle">Of your new companion</h4>
-        <p class="travel_header-text">Our rover, launched in multiple copies on the target planets of the solar system, allows the user to see through his eyes. With its multiple rotating cameras, it offers a 360 ° view to contemplate the surface and its surroundings. Its spherical wheels adapt to various reliefs, combined with an optical stabilizer. Obstacles are avoided using sonar ultrasound technology, offering a comfortable and optimal exploration.</p>
+        <p class="travel_header-text">Our rover, launched in multiple copies on the target planets of the solar system, allows the user to see through his eyes. With its multiple rotating cameras, it offers a 360 ° view to contemplate the surface and its surroundings. Its spherical wheels adapt to various reliefs, combined with an optical stabilizer. Obstacles are avoided using sonar ultrasound technology, offering a comfortable and optimal exploration.</p>
     </section>
 </template>
 

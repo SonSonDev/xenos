@@ -10,13 +10,8 @@
             </div>
             <div class="home_donation-desc-overflow"></div>
         </div>
-        <p class="home_donation-desc-text">Here at Xenos, we also need your help to go further in the evolution of our technology.  Donations are still the most effective tool to achieve your dream of exploration in the best way. Although progress is being made, there is still a long way to go.</p>
+        <p class="home_donation-desc-text">Here at Xenos, we also need your help to go further in the evolution of our technology.  Donations are still the most effective tool to achieve your dream of exploration in the best way. Although progress is being made, there is still a long way to go.</p>
         <OrangeButton link="#">Donate to help the exploration</OrangeButton>
-      </div>
-    </div>
-    <div class="home_donation-imgContainer">
-      <div class="">
-        
       </div>
     </div>
   </section>

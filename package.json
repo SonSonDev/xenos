@@ -10,7 +10,7 @@
   "dependencies": {
     "paper": "^0.11.5",
     "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
+    "vue-router": "^3.6.5",
     "vue-touch": "^2.0.0-beta.4"
   },
   "devDependencies": {
